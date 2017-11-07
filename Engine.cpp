@@ -85,3 +85,9 @@ void Engine::nonBlockingKeyboardUsing(){
     //if(key[KEY_LEFT]);
     //if(key[KEY_RIGHT]);
 }
+
+void Engine::mainLoop(){
+    while(!key[KEY_ESC]){
+    //engine->blockingKeyboardUsing();
+}
+}
