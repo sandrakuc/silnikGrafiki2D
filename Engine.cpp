@@ -11,6 +11,17 @@ Engine::~Engine()
     //dtor
 }
 
+Engine *Engine::single = NULL;
+
+Engine *Engine::getInstance(){
+if(single == NULL){
+    single = new Engine;
+    return single;
+}
+else
+    return single;
+}
+
 Engine::initiall()
 {
     allegro_init();

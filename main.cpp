@@ -8,8 +8,8 @@ using namespace std;
 
 
 int main(){
-Engine engine;
-engine.initiall();
+Engine *engine = Engine::getInstance();
+engine->initiall();
 while
 ( (readkey()& 0xff) != 27);
 allegro_exit();

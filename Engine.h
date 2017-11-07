@@ -7,9 +7,12 @@ class Engine
         Engine();
         virtual ~Engine();
         int initiall();
+        static Engine *getInstance();
     protected:
 
     private:
+        static Engine *single;
+
 };
 
 
