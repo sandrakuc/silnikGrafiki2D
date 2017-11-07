@@ -22,6 +22,13 @@ else
     return single;
 }
 
+Engine::errMsg(){
+    set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);
+    allegro_message("ALLEGRO ERROR!!!");
+    allegro_exit();
+    return -1;
+}
+
 Engine::initiall(){
     allegro_init();
     set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, 1600, 900, 0, 0);
@@ -55,10 +62,8 @@ Engine::initiall(int mode){
             break;
         }
         default: {
-            set_gfx_mode(GFX_TEXT, 0, 0, 0, 0);
-            allegro_message("INVALID VALUE!!!");
-            allegro_exit();
-            return -1;
+            int error = errMsg();
+            return error;
             break;
         }
     }

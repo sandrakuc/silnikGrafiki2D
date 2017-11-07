@@ -9,6 +9,7 @@ class Engine
         int initiall();
         int initiall(int mode);
         static Engine *getInstance();
+        int errMsg();
     protected:
 
     private:
