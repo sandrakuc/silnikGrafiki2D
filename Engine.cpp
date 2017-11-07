@@ -71,3 +71,17 @@ Engine::initiall(int mode){
     install_mouse();
     return 0;
 }
+
+void Engine::blockingKeyboardUsing(){
+    int key;
+    key = readkey();
+    textprintf( screen, font, 20, 20, makecol( 255, 255, 255 ), "You pressed: %d", key);
+
+}
+
+void Engine::nonBlockingKeyboardUsing(){
+    //if(key[KEY_UP]);
+    //if(key[KEY_DOWN]);
+    //if(key[KEY_LEFT]);
+    //if(key[KEY_RIGHT]);
+}

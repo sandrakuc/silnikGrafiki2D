@@ -18,8 +18,9 @@ cout << "5 - windowed, resolution: 800x600" <<endl;
 cin >> mode;
 Engine *engine = Engine::getInstance();
 engine->initiall(mode);
-while
-( (readkey()& 0xff) != 27);
+while(!key[KEY_ESC]){
+    //engine->blockingKeyboardUsing();
+}
 allegro_exit();
 return 0;
 }

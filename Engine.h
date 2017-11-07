@@ -10,6 +10,8 @@ class Engine
         int initiall(int mode);
         static Engine *getInstance();
         int errMsg();
+        void blockingKeyboardUsing();
+        void nonBlockingKeyboardUsing();
     protected:
 
     private:
