@@ -7,6 +7,7 @@ class Engine
         Engine();
         virtual ~Engine();
         int initiall();
+        int initiall(int mode);
         static Engine *getInstance();
     protected:
 
