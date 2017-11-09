@@ -12,7 +12,7 @@ class Engine
         int errMsg();
         void blockingKeyboardUsing();
         void nonBlockingKeyboardUsing();
-        void mainLoop();
+        void mainLoop(Engine *engine);
     protected:
 
     private:

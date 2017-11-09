@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 int main(){
 int mode = 0;
 cout << "In which mode do you want to work?" <<endl;
@@ -18,7 +17,7 @@ cout << "5 - windowed, resolution: 800x600" <<endl;
 cin >> mode;
 Engine *engine = Engine::getInstance();
 engine->initiall(mode);
-engine->mainLoop();
+engine->mainLoop(engine);
 allegro_exit();
 return 0;
 }
