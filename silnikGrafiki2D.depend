@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1510240669 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
+1510242091 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
 	<iostream>
 	<allegro.h>
 	"Engine.h"
 
-1510240549 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
+1510242696 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 
-1510240907 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1510243891 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	"Engine.h"
 

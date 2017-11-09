@@ -39,43 +39,63 @@ Engine::errMsg(){
 }
 
 
-Engine::initiall(){
+BITMAP *Engine::initiall(BITMAP *buffer){
     allegro_init();
-    set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, 1600, 900, 0, 0);
+    Engine::w = 1600;
+    Engine::h = 900;
+    set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
+    buffer = create_bitmap(Engine::w, Engine::h);
     install_keyboard();
     install_mouse();
     install_timer();
     install_int_ex(increment_speed, BPS_TO_TIMER( 100 ) );
-    return 0;
+    return buffer;
 
 }
 
-Engine::initiall(int mode){
+BITMAP *Engine::initiall(int mode, BITMAP *buffer){
     allegro_init();
     switch(mode){
         case 1: {
-            set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, 1600, 900, 0, 0);
+            Engine::w = 1600;
+            Engine::h = 900;
+            set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
+            buffer = create_bitmap(Engine::w, Engine::h);
             break;
         }
         case 2: {
-            set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, 1280, 720, 0, 0);
+            Engine::w = 1280;
+            Engine::h = 720;
+            set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
+            buffer = create_bitmap(Engine::w, Engine::h);
             break;
         }
         case 3: {
-            set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, 800, 600, 0, 0);
+            Engine::w = 800;
+            Engine::h = 600;
+            set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
+            buffer = create_bitmap(Engine::w, Engine::h);
             break;
         }
         case 4: {
-            set_gfx_mode(GFX_AUTODETECT_WINDOWED, 1280, 720, 0, 0);
+            Engine::w = 1280;
+            Engine::h = 720;
+            set_gfx_mode(GFX_AUTODETECT_WINDOWED, Engine::w, Engine::h, 0, 0);
+            buffer = create_bitmap(Engine::w, Engine::h);
+            break;
             break;
         }
         case 5: {
-            set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 600, 0, 0);
+            Engine::w = 800;
+            Engine::h = 600;
+            set_gfx_mode(GFX_AUTODETECT_WINDOWED, Engine::w, Engine::h, 0, 0);
+            buffer = create_bitmap(Engine::w, Engine::h);
             break;
         }
         default: {
-            int error = errMsg();
-            return error;
+            errMsg();
+            buffer = NULL;
+            return buffer;
             break;
         }
     }
@@ -83,13 +103,13 @@ Engine::initiall(int mode){
     install_mouse();
     install_timer();
     install_int_ex(increment_speed, BPS_TO_TIMER( 100 ) );
-    return 0;
+    return buffer;
 }
 
-void Engine::blockingKeyboardUsing(){
+void Engine::blockingKeyboardUsing(BITMAP *buffer){
     int key;
     key = readkey();
-    textprintf( screen, font, 20, 20, makecol( 255, 255, 255 ), "You pressed: %d", key);
+    textprintf( buffer, font, 20, 20, makecol( 255, 255, 255 ), "You pressed: %d", key);
 
 }
 
@@ -100,10 +120,12 @@ void Engine::nonBlockingKeyboardUsing(){
     //if(key[KEY_RIGHT]);
 }
 
-void Engine::mainLoop(Engine *engine){
+void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     while(!key[KEY_ESC]){
         while(speed > 0){
-            engine->blockingKeyboardUsing();
+            clear_to_color(buffer, makecol(0,0,0));
+            engine->blockingKeyboardUsing(buffer);
+            blit( buffer, screen, 0, 0, 0, 0, w, h );
             speed--;
             if(key[KEY_ESC])
                 break;

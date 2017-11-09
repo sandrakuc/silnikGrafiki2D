@@ -8,6 +8,7 @@ using namespace std;
 
 int main(){
 int mode = 0;
+BITMAP *buffer = NULL;
 cout << "In which mode do you want to work?" <<endl;
 cout << "1 - full screen, resolution: 1600x900" <<endl;
 cout << "2 - full screen, resolution: 1280x720" <<endl;
@@ -16,8 +17,9 @@ cout << "4 - windowed, resolution:1280x720" <<endl;
 cout << "5 - windowed, resolution: 800x600" <<endl;
 cin >> mode;
 Engine *engine = Engine::getInstance();
-engine->initiall(mode);
-engine->mainLoop(engine);
+buffer = engine->initiall(mode, buffer);
+engine->mainLoop(engine, buffer);
+destroy_bitmap(buffer);
 allegro_exit();
 return 0;
 }

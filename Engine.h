@@ -4,15 +4,16 @@
 class Engine
 {
     public:
+        int w, h;
         Engine();
         virtual ~Engine();
-        int initiall();
-        int initiall(int mode);
+        BITMAP *initiall(BITMAP *buffer);
+        BITMAP *initiall(int mode, BITMAP *buffer);
         static Engine *getInstance();
         int errMsg();
-        void blockingKeyboardUsing();
+        void blockingKeyboardUsing(BITMAP *buffer);
         void nonBlockingKeyboardUsing();
-        void mainLoop(Engine *engine);
+        void mainLoop(Engine *engine, BITMAP *buffer);
     protected:
 
     private:
