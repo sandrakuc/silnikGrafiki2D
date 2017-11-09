@@ -1,5 +1,6 @@
 #include <allegro.h>
 #include "Engine.h"
+#include "Point2D.h"
 
 volatile long speed = 0;
 

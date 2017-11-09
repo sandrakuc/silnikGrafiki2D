@@ -6,7 +6,10 @@
 
 1510242696 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 
-1510243891 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1510245708 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	"Engine.h"
+	"Point2D.h"
+
+1510245338 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.h
 

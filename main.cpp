@@ -1,6 +1,7 @@
 #include <iostream>
 #include <allegro.h>
 #include "Engine.h"
+#include "Point2D.h"
 #define WIDTH 1600
 #define HEIGHT 900
 
