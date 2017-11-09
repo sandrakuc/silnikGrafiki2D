@@ -46,6 +46,9 @@ BITMAP *Engine::initiall(BITMAP *buffer){
     Engine::h = 900;
     set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
     buffer = create_bitmap(Engine::w, Engine::h);
+    if(!buffer){
+        errMsg();
+    }
     install_keyboard();
     install_mouse();
     install_timer();
@@ -61,21 +64,30 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
             Engine::w = 1600;
             Engine::h = 900;
             set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
-            buffer = create_bitmap(Engine::w, Engine::h);
+            buffer = create_bitmap(SCREEN_W, SCREEN_H);
+            if(!buffer){
+                errMsg();
+            }
             break;
         }
         case 2: {
             Engine::w = 1280;
             Engine::h = 720;
             set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
-            buffer = create_bitmap(Engine::w, Engine::h);
+            buffer = create_bitmap(SCREEN_W, SCREEN_H);
+            if(!buffer){
+                errMsg();
+            }
             break;
         }
         case 3: {
             Engine::w = 800;
             Engine::h = 600;
             set_gfx_mode(GFX_AUTODETECT_FULLSCREEN, Engine::w, Engine::h, 0, 0);
-            buffer = create_bitmap(Engine::w, Engine::h);
+            buffer = create_bitmap(SCREEN_W, SCREEN_H);
+            if(!buffer){
+                errMsg();
+            }
             break;
         }
         case 4: {
@@ -83,6 +95,9 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
             Engine::h = 720;
             set_gfx_mode(GFX_AUTODETECT_WINDOWED, Engine::w, Engine::h, 0, 0);
             buffer = create_bitmap(Engine::w, Engine::h);
+            if(!buffer){
+                errMsg();
+            }
             break;
             break;
         }
@@ -91,6 +106,9 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
             Engine::h = 600;
             set_gfx_mode(GFX_AUTODETECT_WINDOWED, Engine::w, Engine::h, 0, 0);
             buffer = create_bitmap(Engine::w, Engine::h);
+            if(!buffer){
+                errMsg();
+            }
             break;
         }
         default: {
@@ -126,7 +144,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         while(speed > 0){
             clear_to_color(buffer, makecol(0,0,0));
             engine->blockingKeyboardUsing(buffer);
-            blit( buffer, screen, 0, 0, 0, 0, w, h );
+            blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;
             if(key[KEY_ESC])
                 break;
