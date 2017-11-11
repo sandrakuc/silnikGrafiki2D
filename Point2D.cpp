@@ -1,11 +1,10 @@
 #include <allegro.h>
+#include <vector>
 #include "Engine.h"
 #include "Point2D.h"
 
-Point2D::Point2D(){
-    //ctor
-}
 
-Point2D::~Point2D(){
-    //dtor
-}
+
+/*void Point2D::drawGroupOfPoints(vector<Point2D> points){
+
+}*/

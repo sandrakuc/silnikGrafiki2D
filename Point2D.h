@@ -1,11 +1,12 @@
 #ifndef POINT2D_H_INCLUDED
 #define POINT2D_H_INCLUDED
 
+#include <vector>
+
 class Point2D{
 public:
 int x, y;
-Point2D();
-virtual ~Point2D();
+//void drawGroupOfPoints(vector<Point2D> points);
 protected:
 
 private:
