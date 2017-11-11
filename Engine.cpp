@@ -49,6 +49,16 @@ void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, in
     }
 }
 
+void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r, double g, double b){
+    int ri, gi, bi;
+    ri = (int)(r*255);
+    gi = (int)(g*255);
+    bi = (int)(b*255);
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(r,g,b));
+    }
+}
+
 BITMAP *Engine::initiall(BITMAP *buffer){
     allegro_init();
     Engine::w = 1600;
@@ -150,7 +160,8 @@ void Engine::nonBlockingKeyboardUsing(){
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     Point2D p;
     vector <Point2D> points;
-    int n, x, y, r, g, b;
+    int mode, n, x, y, ri, gi, bi;
+    double rd, gd, bd;
     cout << "How many points do you want draw?" << endl;
     cin >> n;
     for(int i=0; i<n; i++){
@@ -162,15 +173,41 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         p.y = y;
         points.push_back(p);
     }
+    cout << "Choose mode of color: "<<endl;
+    cout << "1 - RGB: 0-255"<<endl;
+    cout << "2 - RGB: 0-1"<<endl;
+    cout << "3 - One from the list"<<endl;
+    cin >> mode;
+    switch(mode){
+    case 1: {
     cout << "Choose a color RGB you want to use: "<<endl;
-    cin >> r >> g >> b;
-    if(r < 0 || r > 255 || g < 0 || g >255 || b < 0 || b >255)
+    cin >> ri >> gi >> bi;
+    if(ri < 0 || ri > 255 || gi < 0 || gi >255 || bi < 0 || bi >255)
         errMsg();
+    break;
+    }
+    case 2: {
+    cin >> rd >> gd >> bd;
+    if(ri < 0 || rd > 1 || gd < 0 || gd >1 || bd < 0 || bd >1)
+        errMsg();
+    break;
+    }
+    default: {
+    errMsg();
+    break;
+    }
+    }
+
     while(!key[KEY_ESC]){
         while(speed > 0){
             clear_to_color(buffer, makecol(0,0,0));
             engine->blockingKeyboardUsing(buffer);
-            drawGroupOfPoints(points, buffer, r, g, b);
+            if(mode == 1){
+            drawGroupOfPoints(points, buffer, ri, gi, bi);
+            }
+            if(mode == 2){
+            drawGroupOfPoints(points, buffer, rd, gd, bd);
+            }
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;
             if(key[KEY_ESC])
