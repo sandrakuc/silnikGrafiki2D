@@ -1,5 +1,9 @@
 #ifndef ENGINE_H_INCLUDED
 #define ENGINE_H_INCLUDED
+#include <vector>
+#include "Point2D.h"
+
+using namespace std;
 
 class Engine
 {
@@ -14,6 +18,7 @@ class Engine
         void blockingKeyboardUsing(BITMAP *buffer);
         void nonBlockingKeyboardUsing();
         void mainLoop(Engine *engine, BITMAP *buffer);
+        void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, int g, int b);
     protected:
 
     private:

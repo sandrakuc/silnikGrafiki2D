@@ -1,6 +1,10 @@
 #include <allegro.h>
+#include <iostream>
+#include <vector>
 #include "Engine.h"
 #include "Point2D.h"
+
+using namespace std;
 
 volatile long speed = 0;
 
@@ -39,6 +43,11 @@ Engine::errMsg(){
     return -1;
 }
 
+void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, int g, int b){
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(r,g,b));
+    }
+}
 
 BITMAP *Engine::initiall(BITMAP *buffer){
     allegro_init();
@@ -99,7 +108,6 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
                 errMsg();
             }
             break;
-            break;
         }
         case 5: {
             Engine::w = 800;
@@ -140,10 +148,29 @@ void Engine::nonBlockingKeyboardUsing(){
 }
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
+    Point2D p;
+    vector <Point2D> points;
+    int n, x, y, r, g, b;
+    cout << "How many points do you want draw?" << endl;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        cout << "\nx: ";
+        cin>>x;
+        cout<< "y: ";
+        cin>>y;
+        p.x = x;
+        p.y = y;
+        points.push_back(p);
+    }
+    cout << "Choose a color RGB you want to use: "<<endl;
+    cin >> r >> g >> b;
+    if(r < 0 || r > 255 || g < 0 || g >255 || b < 0 || b >255)
+        errMsg();
     while(!key[KEY_ESC]){
         while(speed > 0){
             clear_to_color(buffer, makecol(0,0,0));
             engine->blockingKeyboardUsing(buffer);
+            drawGroupOfPoints(points, buffer, r, g, b);
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;
             if(key[KEY_ESC])
