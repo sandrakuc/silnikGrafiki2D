@@ -6,11 +6,11 @@
 	"Engine.h"
 	"Point2D.h"
 
-1510419214 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
+1510421527 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 	<vector>
 	"Point2D.h"
 
-1510417601 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1510421975 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	<iostream>
 	<vector>

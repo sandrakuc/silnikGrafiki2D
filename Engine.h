@@ -18,6 +18,7 @@ class Engine
         void blockingKeyboardUsing(BITMAP *buffer);
         void nonBlockingKeyboardUsing();
         void mainLoop(Engine *engine, BITMAP *buffer);
+        void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int color);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, int g, int b);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r, double g, double b);
     protected:

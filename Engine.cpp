@@ -6,6 +6,8 @@
 
 using namespace std;
 
+enum colors{RED = 1, ORANGE = 2, YELLOW = 3, GREEN = 4, CYAN = 5, BLUE = 6, VIOLET = 7, WHITE = 8};
+
 volatile long speed = 0;
 
 void increment_speed(){
@@ -55,7 +57,52 @@ void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r,
     gi = (int)(g*255);
     bi = (int)(b*255);
     for(int i = 0; i<points.size(); i++){
-        putpixel(buffer, points[i].x, points[i].y, makecol(r,g,b));
+        putpixel(buffer, points[i].x, points[i].y, makecol(ri,gi,bi));
+    }
+}
+
+void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int color){ // dopracowac
+    switch(color){
+    case RED:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(255,0,0));
+    }
+    }
+    case ORANGE:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(255,127,39));
+    }
+    }
+    case YELLOW:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(255,255,0));
+    }
+    }
+    case GREEN:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(0,255,0));
+    }
+    }
+    case CYAN:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(0,255,255));
+    }
+    }
+    case BLUE:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(0,0,255));
+    }
+    }
+    case VIOLET:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(255,0,255));
+    }
+    }
+    case WHITE:{
+    for(int i = 0; i<points.size(); i++){
+        putpixel(buffer, points[i].x, points[i].y, makecol(255,255,255));
+    }
+    }
     }
 }
 
@@ -160,7 +207,7 @@ void Engine::nonBlockingKeyboardUsing(){
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     Point2D p;
     vector <Point2D> points;
-    int mode, n, x, y, ri, gi, bi;
+    int color, mode, n, x, y, ri, gi, bi;
     double rd, gd, bd;
     cout << "How many points do you want draw?" << endl;
     cin >> n;
@@ -192,6 +239,13 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         errMsg();
     break;
     }
+    case 3:{
+    cout << "1 - RED\n 2 - ORANGE\n 3 - YELLOW\n 4 - GREEN\n 5 - CYAN\n 6 - BLUE\n 7 - VIOLET\n 8 - WHITE" << endl;
+    cin >> color;
+    if(color < 0 || color > 8)
+        errMsg();
+    break;
+    }
     default: {
     errMsg();
     break;
@@ -207,6 +261,9 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             }
             if(mode == 2){
             drawGroupOfPoints(points, buffer, rd, gd, bd);
+            }
+            if(mode == 2){
+            drawGroupOfPoints(points, buffer, color);
             }
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;
