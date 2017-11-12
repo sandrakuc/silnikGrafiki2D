@@ -2,6 +2,7 @@
 #define LINESEGMENT_H_INCLUDED
 #include "Point2D.h"
 
+
 using namespace std;
 
 class LineSegment{
@@ -14,6 +15,7 @@ int getBx();
 int getBy();
 void drawLine(int r, int b, int g);
 void drawLine(double r, double b, double g);
+void drawLine(int col);
 protected:
 
 private:
