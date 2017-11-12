@@ -61,47 +61,45 @@ void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r,
     }
 }
 
-void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int color){ // dopracowac
-    switch(color){
-    case RED:{
+void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int color){
+    if(color == RED){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(255,0,0));
     }
     }
-    case ORANGE:{
+    if(color == ORANGE){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(255,127,39));
     }
     }
-    case YELLOW:{
+    if(color == YELLOW){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(255,255,0));
     }
     }
-    case GREEN:{
+    if(color == GREEN){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(0,255,0));
     }
     }
-    case CYAN:{
+    if(color == CYAN){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(0,255,255));
     }
     }
-    case BLUE:{
+    if(color == BLUE){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(0,0,255));
     }
     }
-    case VIOLET:{
+    if(color == VIOLET){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(255,0,255));
     }
     }
-    case WHITE:{
+    if(color == WHITE){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(255,255,255));
-    }
     }
     }
 }
@@ -262,7 +260,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             if(mode == 2){
             drawGroupOfPoints(points, buffer, rd, gd, bd);
             }
-            if(mode == 2){
+            if(mode == 3){
             drawGroupOfPoints(points, buffer, color);
             }
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
