@@ -51,3 +51,31 @@ if(m > 1.0){
     }
 }
 }
+
+void LineSegment::drawLine(double r, double g, double b){
+int ri = (int)(r*255);
+int gi = (int)(g*255);
+int bi = (int)(b*255);
+float dx=LineSegment::b.x-LineSegment::a.x;
+if(dx < 0)
+    dx = 0 - dx;
+float dy=LineSegment::b.y-LineSegment::a.y;
+if(dy < 0)
+    dy = 0 - dy;
+float m=dy/dx;
+if(m <= 1.0){
+float y=LineSegment::a.y;
+for(int x=x0; x<=x1; x++){
+putpixel(screen, x, int(y+0.5), makeacol(ri,gi,bi));
+y+=m;
+}
+}
+if(m > 1.0){
+    m = dx/dy;
+    float x=LineSegment::b.y;
+    for(int y=y0; y<=y1; y++){
+        putpixel(screen,int(x+0.5),y,makeacol(ri,gi,bi));
+        x+=m;
+    }
+}
+}
