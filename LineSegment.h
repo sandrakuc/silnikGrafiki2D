@@ -12,6 +12,7 @@ int getAx();
 int getAy();
 int getBx();
 int getBy();
+void drawLine(int r, int b, int g);
 protected:
 
 private:

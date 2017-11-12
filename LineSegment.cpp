@@ -26,3 +26,28 @@ int LineSegment::getBx(){
 int LineSegment::getBy(){
     return LineSegment::b.y;
 }
+
+void LineSegment::drawLine(int r, int g, int b){
+float dx=LineSegment::b.x-LineSegment::a.x;
+if(dx < 0)
+    dx = 0 - dx;
+float dy=LineSegment::b.y-LineSegment::a.y;
+if(dy < 0)
+    dy = 0 - dy;
+float m=dy/dx;
+if(m <= 1.0){
+float y=LineSegment::a.y;
+for(int x=x0; x<=x1; x++){
+putpixel(screen, x, int(y+0.5), makeacol(r,g,b));
+y+=m;
+}
+}
+if(m > 1.0){
+    m = dx/dy;
+    float x=LineSegment::b.y;
+    for(int y=y0; y<=y1; y++){
+        putpixel(screen,int(x+0.5),y,makeacol(r,g,b));
+        x+=m;
+    }
+}
+}
