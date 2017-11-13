@@ -3,6 +3,7 @@
 #include <vector>
 #include "Engine.h"
 #include "Point2D.h"
+#include "LineSegment.h"
 #define WIDTH 1600
 #define HEIGHT 900
 

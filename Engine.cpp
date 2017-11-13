@@ -3,6 +3,7 @@
 #include <vector>
 #include "Engine.h"
 #include "Point2D.h"
+#include "LineSegment.h"
 
 using namespace std;
 
@@ -204,10 +205,11 @@ void Engine::nonBlockingKeyboardUsing(){
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     Point2D p;
+    LineSegment line;
     vector <Point2D> points;
-    int color, mode, n, x, y, ri, gi, bi;
+    int color, mode, n, x, y, ri, gi, bi, ax, ay, bx, by;
     double rd, gd, bd;
-    cout << "How many points do you want draw?" << endl;
+    /*cout << "How many points do you want draw?" << endl;
     cin >> n;
     for(int i=0; i<n; i++){
         cout << "\nx: ";
@@ -217,7 +219,10 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         p.x = x;
         p.y = y;
         points.push_back(p);
-    }
+    }*/
+    cout << "Set point A and B of Line: "<<endl;
+    cin >> ax >> ay >> bx >> by;
+    line.setPoints(ax, ay, bx, by);
     cout << "Choose mode of color: "<<endl;
     cout << "1 - RGB: 0-255"<<endl;
     cout << "2 - RGB: 0-1"<<endl;
@@ -255,13 +260,16 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             clear_to_color(buffer, makecol(0,0,0));
             engine->blockingKeyboardUsing(buffer);
             if(mode == 1){
-            drawGroupOfPoints(points, buffer, ri, gi, bi);
+            //drawGroupOfPoints(points, buffer, ri, gi, bi);
+            line.drawLine(buffer, ri, gi, bi);
             }
             if(mode == 2){
-            drawGroupOfPoints(points, buffer, rd, gd, bd);
+            line.drawLine(buffer, rd, gd, bd);
+            //drawGroupOfPoints(points, buffer, rd, gd, bd);
             }
             if(mode == 3){
-            drawGroupOfPoints(points, buffer, color);
+            //drawGroupOfPoints(points, buffer, color);
+            line.drawLine(buffer, color);
             }
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;

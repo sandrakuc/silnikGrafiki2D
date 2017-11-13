@@ -1,6 +1,10 @@
-#ifndef LINESEGMENT_H_INCLUDED
-#define LINESEGMENT_H_INCLUDED
+#ifndef LINESEGMENT_H
+#define LINESEGMENT_H
 #include "Point2D.h"
+#include "Engine.h"
+#include <allegro.h>
+#include <vector>
+#include <iostream>
 
 
 using namespace std;
@@ -13,9 +17,9 @@ int getAx();
 int getAy();
 int getBx();
 int getBy();
-void drawLine(int r, int b, int g);
-void drawLine(double r, double b, double g);
-void drawLine(int col);
+void drawLine(BITMAP *buffer,int r, int b, int g);
+void drawLine(BITMAP *buffer,double r, double b, double g);
+void drawLine(BITMAP *buffer,int col);
 protected:
 
 private:

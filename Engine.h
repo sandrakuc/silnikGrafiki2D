@@ -2,6 +2,7 @@
 #define ENGINE_H_INCLUDED
 #include <vector>
 #include "Point2D.h"
+#include "LineSegment.h"
 
 using namespace std;
 
