@@ -2,7 +2,9 @@
 #include <iostream>
 #include <vector>
 #include "Engine.h"
+#include "LineSegment.h"
 #include "Point2D.h"
+
 
 #define MODE_RGB 1
 
@@ -208,7 +210,8 @@ void Engine::nonBlockingKeyboardUsing(){
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     Point2D p;
-    //LineSegment line;
+    LineSegment line;
+    line.funkcja();
     vector <Point2D> points;
     int color, mode, n, x, y, ri, gi, bi, ax, ay, bx, by;
     double rd, gd, bd;
