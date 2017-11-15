@@ -1,7 +1,6 @@
 #ifndef ENGINE_H_INCLUDED
 #define ENGINE_H_INCLUDED
 #include <vector>
-#include "LineSegment.h"
 #include "Point2D.h"
 
 

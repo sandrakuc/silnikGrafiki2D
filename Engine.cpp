@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Engine.h"
+#include "Point2D.h"
 
 #define MODE_RGB 1
 
@@ -206,7 +207,7 @@ void Engine::nonBlockingKeyboardUsing(){
 
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
-    Point2D p, a, b;
+    Point2D p;
     //LineSegment line;
     vector <Point2D> points;
     int color, mode, n, x, y, ri, gi, bi, ax, ay, bx, by;
@@ -218,8 +219,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         cin>>x;
         cout<< "y: ";
         cin>>y;
-        p.x = x;
-        p.y = y;
+        p.setXY(x, y);
         points.push_back(p);
     }
 
