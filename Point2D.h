@@ -7,9 +7,11 @@
 using namespace std;
 
 class Point2D{
+
 public:
-int x, y;
-void setXY(int x, int y);
+    int x, y;
+    void setXY(int x, int y);
+
 protected:
 
 private:

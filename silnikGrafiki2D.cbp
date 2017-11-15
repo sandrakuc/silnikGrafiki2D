@@ -43,9 +43,7 @@
 		<Unit filename="Point2D.cpp">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="Point2D.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Point2D.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

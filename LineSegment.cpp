@@ -8,9 +8,14 @@ using namespace std;
 
 enum colors{RED = 1, ORANGE = 2, YELLOW = 3, GREEN = 4, CYAN = 5, BLUE = 6, VIOLET = 7, WHITE = 8};
 
-void LineSegment::setPoints(int ax, int ay, int bx, int by){
-    LineSegment::a.setXY(ax, ay);
-    LineSegment::b.setXY(bx, by);
+Point2D LineSegment::a.x = 0;
+Point2D LineSegment::a.y = 0;
+Point2D LineSegment::b.x = 0;
+Point2D LineSegment::b.y = 0;
+
+void LineSegment::setPoints(Point2D p1, Point2D p2){
+    a = p1;
+    b = p2;
 }
 
 int LineSegment::getAx(){
