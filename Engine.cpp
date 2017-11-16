@@ -213,6 +213,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     Point2D p, a, b;
     LineSegment line;
     vector <Point2D> points;
+    vector <LineSegment> lines;
     int color, mode, n, x, y, ri, gi, bi, ax, ay, bx, by;
     double rd, gd, bd;
     /*cout << "How many points do you want draw?" << endl;
@@ -226,14 +227,28 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         points.push_back(p);
     }*/
 
-    cout << "Set point A and B of Line: "<<endl;
-    cin >> ax >> ay >> bx >> by;
+    cout << "How many lines do you want draw?" << endl;
+    cin >> n;
+    for(int i=0; i<n; i++){
+    if(i==0){
+        cout << "Set point A and B of first Line: "<<endl;
+        cin >> ax >> ay >> bx >> by;
+    }
+    else{
+        cout << "Set point B next Line: "<<endl;
+        ax = bx;
+        ay = by;
+        cin >> bx >> by;
+    }
+    if(ax < 0 || ay < 0 || bx < 0 || by < 0)
+        errMsg();
     a.setXY(ax, ay);
     b.setXY(bx, by);
     line.setAB(a, b);
     cout << "DEBUG: A: " << line.getAX() << ", " <<line.getAY() << endl;
     cout << "DEBUG: B: " << line.getBX() << ", " <<line.getBY() << endl;
-
+    lines.push_back(line);
+    }
 
     cout << "Choose mode of color: "<<endl;
     cout << "1 - RGB: 0-255"<<endl;
@@ -273,18 +288,21 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             engine->blockingKeyboardUsing(buffer);
             if(mode == MODE_RGB_INT){
                 //drawGroupOfPoints(points, buffer, ri, gi, bi);
-                line.drawLine(buffer, ri, gi, bi);
+                //line.drawLine(buffer, ri, gi, bi);
+                line.polyline(buffer, lines, ri, gi, bi);
             }
 
             if(mode == MODE_RGB_DOUBLE){
-                line.drawLine(buffer, rd, gd, bd);
+                //line.drawLine(buffer, rd, gd, bd);
                 //drawGroupOfPoints(points, buffer, rd, gd, bd);
+                line.polyline(buffer, lines, rd, gd, bd);
             }
 
 
             if(mode == MODE_LIST){
                 //drawGroupOfPoints(points, buffer, color);
-                line.drawLine(buffer, color);
+                //line.drawLine(buffer, color);
+                line.polyline(buffer, lines, color);
             }
 
 
