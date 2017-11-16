@@ -277,13 +277,13 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             }
 
             if(mode == MODE_RGB_DOUBLE){
-                //line.drawLine(buffer, rd, gd, bd);
-                drawGroupOfPoints(points, buffer, rd, gd, bd);
+                line.drawLine(buffer, rd, gd, bd);
+                //drawGroupOfPoints(points, buffer, rd, gd, bd);
             }
 
 
             if(mode == MODE_LIST){
-                drawGroupOfPoints(points, buffer, color);
+                //drawGroupOfPoints(points, buffer, color);
                 //line.drawLine(buffer, color);
             }
 

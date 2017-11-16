@@ -16,6 +16,8 @@ class LineSegment
         int getBX();
         int getBY();
         void drawLine(BITMAP *buffer, int red, int green, int blue);
+        void drawLine(BITMAP *buffer, double red, double green, double blue);
+        void drawLine(BITMAP *buffer, int color);
     protected:
 
     private:

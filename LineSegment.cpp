@@ -119,3 +119,92 @@ if(a.x > b.x && a.y > b.y){
     }
 }
 }
+
+void LineSegment::drawLine(BITMAP *buffer, double red, double green, double blue){
+int redi, greeni, bluei;
+redi = (int)(255*red);
+greeni = (int)(255*green);
+bluei = (int)(255 * blue);
+int col = makecol(redi, greeni, bluei);
+float dx = b.x - a.x;
+if(dx < 0)
+    dx = 0 - dx;
+float dy = b.y - a.y;
+if(dy < 0)
+    dy = 0 - dy;
+float m = dy/dx;
+if(a.x < b.x && a.y < b.y){
+    if(m <= 1.0){
+        float y = a.y;
+        for(int x = a.x; x<=b.x; x++){
+            putpixel(buffer, x, int(y+0.5), col);
+            y+=m;
+        }
+    }
+    if(m > 1.0){
+        m = dx/dy;
+        float x = a.x;
+        for(int y = a.y; y<=b.y; y++){
+            putpixel(buffer, int(x+0.5), y, col);
+            x+=m;
+        }
+    }
+}
+if(a.x < b.x && a.y > b.y){
+    if(m <= 1.0){
+        float y = a.y;
+        for(int x = a.x; x<=b.x; x++){
+            putpixel(buffer, x, int(y+0.5), col);
+            y-=m;
+        }
+    }
+    if(m > 1.0){
+        m = dx/dy;
+        float x = a.x;
+        for(int y = a.y; y>=b.y; y--){
+            putpixel(buffer, int(x+0.5), y, col);
+            x+=m;
+        }
+    }
+}
+if(a.x > b.x && a.y < b.y){
+    Point2D tmp = a;
+    a = b;
+    b = tmp;
+    if(m <= 1.0){
+        float y = a.y;
+        for(int x = a.x; x<=b.x; x++){
+            putpixel(buffer, x, int(y+0.5), col);
+            y+=m;
+        }
+    }
+    if(m > 1.0){
+        m = dx/dy;
+        float x = a.x;
+        for(int y = a.y; y<=b.y; y++){
+            putpixel(buffer, int(x+0.5), y, col);
+            x+=m;
+        }
+    }
+}
+if(a.x > b.x && a.y > b.y){
+    Point2D tmp = a;
+    a = b;
+    b = tmp;
+    if(m <= 1.0){
+        float y = a.y;
+        for(int x = a.x; x<=b.x; x++){
+            putpixel(buffer, x, int(y+0.5), col);
+            y-=m;
+        }
+    }
+    if(m > 1.0){
+        m = dx/dy;
+        float x = a.x;
+        for(int y = a.y; y>=b.y; y--){
+            putpixel(buffer, int(x+0.5), y, col);
+            x+=m;
+        }
+    }
+}
+}
