@@ -284,7 +284,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
 
             if(mode == MODE_LIST){
                 //drawGroupOfPoints(points, buffer, color);
-                //line.drawLine(buffer, color);
+                line.drawLine(buffer, color);
             }
 
 
