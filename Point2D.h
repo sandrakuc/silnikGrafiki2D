@@ -1,10 +1,5 @@
-#ifndef POINT2D_H_INCLUDED
-#define POINT2D_H_INCLUDED
-#include <vector>
-#include "LineSegment.h"
-#include "Engine.h"
-
-
+#ifndef POINT2D_H
+#define POINT2D_H
 
 using namespace std;
 
@@ -14,11 +9,10 @@ public:
     int x, y;
     Point2D();
     void setXY(int x, int y);
-
 protected:
 
 private:
 
 };
 
-#endif // POINT2D_H_INCLUDED
+#endif //POINT2D_H

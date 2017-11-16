@@ -2,9 +2,8 @@
 #include <iostream>
 #include <vector>
 #include "Engine.h"
-#include "LineSegment.h"
 #include "Point2D.h"
-
+#include "LineSegment.h"
 
 #define MODE_RGB 1
 
@@ -294,5 +293,3 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         }
     }
 }
-
-

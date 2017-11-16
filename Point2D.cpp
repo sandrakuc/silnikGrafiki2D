@@ -1,9 +1,8 @@
 #include <allegro.h>
 #include <vector>
 #include <iostream>
-#include "Engine.h"
 #include "Point2D.h"
-#include "LineSegment.h"
+
 
 using namespace std;
 

@@ -1,18 +1,18 @@
-#ifndef LINESEGMENT_H_INCLUDED
-#define LINESEGMENT_H_INCLUDED
-#include <iostream>
-#include <allegro.h>
-#include <vector>
-#include "Engine.h"
+#ifndef LINESEGMENT_H
+#define LINESEGMENT_H
 #include "Point2D.h"
 
-using namespace std;
 
-class LineSegment {
-public:
-void funkcja();
-private:
-//Point2D a, b;
+class LineSegment
+{
+    public:
+        LineSegment();
+        virtual ~LineSegment();
+        Point2D a, b;
+        void funkcja();
+    protected:
+
+    private:
 };
 
-#endif // LINESEGMENT_H_INCLUDED
+#endif // LINESEGMENT_H

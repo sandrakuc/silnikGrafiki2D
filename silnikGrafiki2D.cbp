@@ -32,19 +32,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Engine.cpp" />
+		<Unit filename="Engine.cpp">
+			<Option weight="100" />
+		</Unit>
 		<Unit filename="Engine.h" />
-		<Unit filename="LineSegment.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="LineSegment.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="Point2D.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Point2D.cpp" />
 		<Unit filename="Point2D.h" />
-		<Unit filename="main.cpp" />
+		<Unit filename="main.cpp">
+			<Option weight="100" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

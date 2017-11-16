@@ -1,6 +1,7 @@
-#ifndef ENGINE_H_INCLUDED
-#define ENGINE_H_INCLUDED
+#ifndef ENGINE_H
+#define ENGINE_H
 #include <vector>
+#include <allegro.h>
 #include "Point2D.h"
 #include "LineSegment.h"
 
@@ -32,3 +33,4 @@ class Engine
 
 
 #endif // ENGINE_H_INCLUDED
+

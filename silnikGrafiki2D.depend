@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1510772666 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
+1510837812 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
 	<iostream>
 	<allegro.h>
 	<vector>
@@ -7,36 +7,30 @@
 	"Point2D.h"
 	"LineSegment.h"
 
-1510770706 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
+1510837812 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 	<vector>
+	<allegro.h>
 	"Point2D.h"
 	"LineSegment.h"
 
-1510766811 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1510837812 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	<iostream>
 	<vector>
 	"Engine.h"
-
-1510770678 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.h
-	<vector>
+	"Point2D.h"
 	"LineSegment.h"
-	"Engine.h"
 
-1510772604 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.h
-	<iostream>
-	<allegro.h>
-	<vector>
-	"Engine.h"
+1510837870 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.h
+
+1510837812 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.h
 	"Point2D.h"
 
-1510769133 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.cpp
+1510837812 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.cpp
 	<allegro.h>
 	<vector>
 	<iostream>
-	"Engine.h"
 	"Point2D.h"
-	"LineSegment.h"
 
 1510770951 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.cpp
 	<iostream>
