@@ -5,7 +5,9 @@
 #include "Point2D.h"
 #include "LineSegment.h"
 
-#define MODE_RGB 1
+#define MODE_RGB_INT 1
+#define MODE_RGB_DOUBLE 2
+#define MODE_LIST 3
 
 using namespace std;
 
@@ -269,20 +271,18 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         while(speed > 0){
             clear_to_color(buffer, makecol(0,0,0));
             engine->blockingKeyboardUsing(buffer);
-            if(mode == MODE_RGB){
-                drawGroupOfPoints(points, buffer, ri, gi, bi);
-
-
-                //line.drawLine(buffer, ri, gi, bi);
+            if(mode == MODE_RGB_INT){
+                //drawGroupOfPoints(points, buffer, ri, gi, bi);
+                line.drawLine(buffer, ri, gi, bi);
             }
 
-            if(mode == 2){
+            if(mode == MODE_RGB_DOUBLE){
                 //line.drawLine(buffer, rd, gd, bd);
                 drawGroupOfPoints(points, buffer, rd, gd, bd);
             }
 
 
-            if(mode == 3){
+            if(mode == MODE_LIST){
                 drawGroupOfPoints(points, buffer, color);
                 //line.drawLine(buffer, color);
             }

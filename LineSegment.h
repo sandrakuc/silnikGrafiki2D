@@ -1,5 +1,6 @@
 #ifndef LINESEGMENT_H
 #define LINESEGMENT_H
+#include <allegro.h>
 #include "Point2D.h"
 
 
@@ -14,6 +15,7 @@ class LineSegment
         int getAY();
         int getBX();
         int getBY();
+        void drawLine(BITMAP *buffer, int red, int green, int blue);
     protected:
 
     private:
