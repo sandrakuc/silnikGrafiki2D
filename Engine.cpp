@@ -208,13 +208,12 @@ void Engine::nonBlockingKeyboardUsing(){
 
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
-    Point2D p;
+    Point2D p, a, b;
     LineSegment line;
-    line.funkcja();
     vector <Point2D> points;
     int color, mode, n, x, y, ri, gi, bi, ax, ay, bx, by;
     double rd, gd, bd;
-    cout << "How many points do you want draw?" << endl;
+    /*cout << "How many points do you want draw?" << endl;
     cin >> n;
     for(int i=0; i<n; i++){
         cout << "\nx: ";
@@ -223,13 +222,16 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         cin>>y;
         p.setXY(x, y);
         points.push_back(p);
-    }
+    }*/
 
-    /*cout << "Set point A and B of Line: "<<endl;
+    cout << "Set point A and B of Line: "<<endl;
     cin >> ax >> ay >> bx >> by;
     a.setXY(ax, ay);
     b.setXY(bx, by);
-    //line.setPoints(a, b); */
+    line.setAB(a, b);
+    cout << "DEBUG: A: " << line.getAX() << ", " <<line.getAY() << endl;
+    cout << "DEBUG: B: " << line.getBX() << ", " <<line.getBY() << endl;
+
 
     cout << "Choose mode of color: "<<endl;
     cout << "1 - RGB: 0-255"<<endl;

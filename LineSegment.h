@@ -9,7 +9,11 @@ class LineSegment
         LineSegment();
         virtual ~LineSegment();
         Point2D a, b;
-        void funkcja();
+        void setAB(Point2D p1, Point2D p2);
+        int getAX();
+        int getAY();
+        int getBX();
+        int getBY();
     protected:
 
     private:

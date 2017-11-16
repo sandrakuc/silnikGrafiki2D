@@ -11,9 +11,6 @@ using namespace std;
 
 int main(){
 int mode = 0;
-Point2D a;
-LineSegment line;
-line.funkcja();
 BITMAP *buffer = NULL;
 cout << "In which mode do you want to work?" <<endl;
 cout << "1 - full screen, resolution: 1600x900" <<endl;
