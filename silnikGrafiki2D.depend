@@ -39,3 +39,12 @@
 	"LineSegment.h"
 	"Point2D.h"
 
+1510948232 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
+	"Viewport.h"
+	"Point2D.h"
+	"LineSegment.h"
+
+1510948496 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
+	"Point2D.h"
+	"LineSegment.h"
+
