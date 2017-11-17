@@ -195,21 +195,6 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
     return buffer;
 }
 
-void Engine::blockingKeyboardUsing(BITMAP *buffer){
-    int key;
-    key = readkey();
-    textprintf( buffer, font, 20, 20, makecol( 255, 255, 255 ), "You pressed: %d", key);
-
-}
-
-void Engine::nonBlockingKeyboardUsing(){
-    //if(key[KEY_UP]);
-    //if(key[KEY_DOWN]);
-    //if(key[KEY_LEFT]);
-    //if(key[KEY_RIGHT]);
-}
-
-
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     Point2D p, a, b, pt1, pt2, pt3, pt4;
     pt1.setXY(100,150);
@@ -290,7 +275,6 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     while(!key[KEY_ESC]){
         while(speed > 0){
             clear_to_color(buffer, makecol(0,0,0));
-            engine->blockingKeyboardUsing(buffer);
             if(mode == MODE_RGB_INT){
                 //drawGroupOfPoints(points, buffer, ri, gi, bi);
                 //line.drawLine(buffer, ri, gi, bi);
@@ -308,6 +292,30 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
                 //drawGroupOfPoints(points, buffer, color);
                 //line.drawLine(buffer, color);
                 line.polyline(buffer, lines, color);
+            }
+            if(key[KEY_UP]){
+                pt1.y--;
+                pt2.y--;
+                pt3.y--;
+                pt4.y--;
+            }
+            if(key[KEY_DOWN]){
+                pt1.y++;
+                pt2.y++;
+                pt3.y++;
+                pt4.y++;
+            }
+            if(key[KEY_RIGHT]){
+                pt1.x++;
+                pt2.x++;
+                pt3.x++;
+                pt4.x++;
+            }
+            if(key[KEY_LEFT]){
+                pt1.x--;
+                pt2.x--;
+                pt3.x--;
+                pt4.x--;
             }
             Viewport v;
             v.setVertices(pt1, pt2, pt3, pt4);

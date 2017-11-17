@@ -7,7 +7,7 @@
 	"Point2D.h"
 	"LineSegment.h"
 
-1510837812 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
+1510952022 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 	<vector>
 	<allegro.h>
 	"Point2D.h"
@@ -35,7 +35,7 @@
 	<iostream>
 	"Point2D.h"
 
-1510944389 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.cpp
+1510951446 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.cpp
 	<iostream>
 	"LineSegment.h"
 	"Point2D.h"
