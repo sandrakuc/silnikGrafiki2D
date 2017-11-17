@@ -46,15 +46,15 @@ float dy = b.y - a.y;
 if(dy < 0)
     dy = 0 - dy;
 float m = dy/dx;
-if(a.x < b.x && a.y < b.y){
-    if(m <= 1.0){
+if(a.x <= b.x && a.y <= b.y){
+    if(m <= 1.0 && dx !=0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
@@ -63,15 +63,15 @@ if(a.x < b.x && a.y < b.y){
         }
     }
 }
-if(a.x < b.x && a.y > b.y){
-    if(m <= 1.0){
+if(a.x <= b.x && a.y >= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
@@ -80,15 +80,15 @@ if(a.x < b.x && a.y > b.y){
         }
     }
 }
-if(a.x > b.x && a.y < b.y){
-    if(m <= 1.0){
+if(a.x >= b.x && a.y <= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x>=b.x; x--){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
@@ -97,15 +97,15 @@ if(a.x > b.x && a.y < b.y){
         }
     }
 }
-if(a.x > b.x && a.y > b.y){
-    if(m <= 1.0){
+if(a.x >= b.x && a.y >= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x>=b.x; x--){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx ==0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
@@ -129,15 +129,15 @@ float dy = b.y - a.y;
 if(dy < 0)
     dy = 0 - dy;
 float m = dy/dx;
-if(a.x < b.x && a.y < b.y){
-    if(m <= 1.0){
+if(a.x <= b.x && a.y <= b.y){
+    if(m <= 1.0 && dx !=0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
@@ -146,15 +146,15 @@ if(a.x < b.x && a.y < b.y){
         }
     }
 }
-if(a.x < b.x && a.y > b.y){
-    if(m <= 1.0){
+if(a.x <= b.x && a.y >= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
@@ -163,15 +163,15 @@ if(a.x < b.x && a.y > b.y){
         }
     }
 }
-if(a.x > b.x && a.y < b.y){
-    if(m <= 1.0){
+if(a.x >= b.x && a.y <= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x>=b.x; x--){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
@@ -180,15 +180,15 @@ if(a.x > b.x && a.y < b.y){
         }
     }
 }
-if(a.x > b.x && a.y > b.y){
-    if(m <= 1.0){
+if(a.x >= b.x && a.y >= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x>=b.x; x--){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx ==0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
@@ -224,15 +224,15 @@ float dy = b.y - a.y;
 if(dy < 0)
     dy = 0 - dy;
 float m = dy/dx;
-if(a.x < b.x && a.y < b.y){
-    if(m <= 1.0){
+if(a.x <= b.x && a.y <= b.y){
+    if(m <= 1.0 && dx !=0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
@@ -241,15 +241,15 @@ if(a.x < b.x && a.y < b.y){
         }
     }
 }
-if(a.x < b.x && a.y > b.y){
-    if(m <= 1.0){
+if(a.x <= b.x && a.y >= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
@@ -258,15 +258,15 @@ if(a.x < b.x && a.y > b.y){
         }
     }
 }
-if(a.x > b.x && a.y < b.y){
-    if(m <= 1.0){
+if(a.x >= b.x && a.y <= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x>=b.x; x--){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
@@ -275,15 +275,15 @@ if(a.x > b.x && a.y < b.y){
         }
     }
 }
-if(a.x > b.x && a.y > b.y){
-    if(m <= 1.0){
+if(a.x >= b.x && a.y >= b.y){
+    if(m <= 1.0 && dx != 0){
         float y = a.y;
         for(int x = a.x; x>=b.x; x--){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx ==0){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
@@ -303,15 +303,15 @@ float dy = p2.y - p1.y;
 if(dy < 0)
     dy = 0 - dy;
 float m = dy/dx;
-if(p1.x < p2.x && p1.y < p2.y){
-    if(m <= 1.0){
+if(p1.x <= p2.x && p1.y <= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
@@ -320,15 +320,15 @@ if(p1.x < p2.x && p1.y < p2.y){
         }
     }
 }
-if(p1.x < p2.x && p1.y > p2.y){
-    if(m <= 1.0){
+if(p1.x <= p2.x && p1.y >= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
@@ -337,15 +337,15 @@ if(p1.x < p2.x && p1.y > p2.y){
         }
     }
 }
-if(p1.x > p2.x && p1.y < p2.y){
-    if(m <= 1.0){
+if(p1.x >= p2.x && p1.y <= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x>=p2.x; x--){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
@@ -354,15 +354,15 @@ if(p1.x > p2.x && p1.y < p2.y){
         }
     }
 }
-if(p1.x > p2.x && p1.y > p2.y){
-    if(m <= 1.0){
+if(p1.x >= p2.x && p1.y >= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x>=p2.x; x--){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
@@ -386,15 +386,15 @@ float dy = p2.y - p1.y;
 if(dy < 0)
     dy = 0 - dy;
 float m = dy/dx;
-if(p1.x < p2.x && p1.y < p2.y){
-    if(m <= 1.0){
+if(p1.x <= p2.x && p1.y <= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
@@ -403,15 +403,15 @@ if(p1.x < p2.x && p1.y < p2.y){
         }
     }
 }
-if(p1.x < p2.x && p1.y > p2.y){
-    if(m <= 1.0){
+if(p1.x <= p2.x && p1.y >= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
@@ -420,15 +420,15 @@ if(p1.x < p2.x && p1.y > p2.y){
         }
     }
 }
-if(p1.x > p2.x && p1.y < p2.y){
-    if(m <= 1.0){
+if(p1.x >= p2.x && p1.y <= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x>=p2.x; x--){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
@@ -437,15 +437,15 @@ if(p1.x > p2.x && p1.y < p2.y){
         }
     }
 }
-if(p1.x > p2.x && p1.y > p2.y){
-    if(m <= 1.0){
+if(p1.x >= p2.x && p1.y >= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x>=p2.x; x--){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
@@ -481,15 +481,15 @@ float dy = p2.y - p1.y;
 if(dy < 0)
     dy = 0 - dy;
 float m = dy/dx;
-if(p1.x < p2.x && p1.y < p2.y){
-    if(m <= 1.0){
+if(p1.x <= p2.x && p1.y <= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
@@ -498,15 +498,15 @@ if(p1.x < p2.x && p1.y < p2.y){
         }
     }
 }
-if(p1.x < p2.x && p1.y > p2.y){
-    if(m <= 1.0){
+if(p1.x <= p2.x && p1.y >= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
@@ -515,15 +515,15 @@ if(p1.x < p2.x && p1.y > p2.y){
         }
     }
 }
-if(p1.x > p2.x && p1.y < p2.y){
-    if(m <= 1.0){
+if(p1.x >= p2.x && p1.y <= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x>=p2.x; x--){
             putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
@@ -532,15 +532,15 @@ if(p1.x > p2.x && p1.y < p2.y){
         }
     }
 }
-if(p1.x > p2.x && p1.y > p2.y){
-    if(m <= 1.0){
+if(p1.x >= p2.x && p1.y >= p2.y){
+    if(m <= 1.0 && dx != 0){
         float y = p1.y;
         for(int x = p1.x; x>=p2.x; x--){
             putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
-    if(m > 1.0){
+    if(m > 1.0 || dx == 0){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){

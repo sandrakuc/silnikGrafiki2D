@@ -16,6 +16,7 @@ class Viewport
         Point2D getB();
         Point2D getC();
         Point2D getD();
+        void clippingRectangle(BITMAP *buffer);
     protected:
 
     private:

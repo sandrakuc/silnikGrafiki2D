@@ -2,6 +2,8 @@
 #include "Point2D.h"
 #include "LineSegment.h"
 
+enum colors{RED = 1, ORANGE = 2, YELLOW = 3, GREEN = 4, CYAN = 5, BLUE = 6, VIOLET = 7, WHITE = 8};
+
 Viewport::Viewport()
 {
     //ctor
@@ -37,4 +39,10 @@ return c;
 
 Point2D Viewport::getD(){
 return d;
+}
+
+void Viewport::clippingRectangle(BITMAP *buffer){
+for(int i=0; i<4; i++){
+    walls[i].drawLine(buffer, WHITE);
+}
 }

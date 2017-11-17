@@ -4,6 +4,7 @@
 #include "Engine.h"
 #include "Point2D.h"
 #include "LineSegment.h"
+#include "Viewport.h"
 
 #define MODE_RGB_INT 1
 #define MODE_RGB_DOUBLE 2
@@ -210,7 +211,11 @@ void Engine::nonBlockingKeyboardUsing(){
 
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
-    Point2D p, a, b;
+    Point2D p, a, b, pt1, pt2, pt3, pt4;
+    pt1.setXY(100,150);
+    pt2.setXY(300,150);
+    pt3.setXY(300,250);
+    pt4.setXY(100,250);
     LineSegment line;
     vector <Point2D> points;
     vector <LineSegment> lines;
@@ -304,7 +309,9 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
                 //line.drawLine(buffer, color);
                 line.polyline(buffer, lines, color);
             }
-
+            Viewport v;
+            v.setVertices(pt1, pt2, pt3, pt4);
+            v.clippingRectangle(buffer);
 
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;
