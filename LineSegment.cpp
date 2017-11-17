@@ -50,7 +50,7 @@ if(a.x < b.x && a.y < b.y){
     if(m <= 1.0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -58,7 +58,7 @@ if(a.x < b.x && a.y < b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
@@ -67,7 +67,7 @@ if(a.x < b.x && a.y > b.y){
     if(m <= 1.0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -75,19 +75,16 @@ if(a.x < b.x && a.y > b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
 }
 if(a.x > b.x && a.y < b.y){
-    Point2D tmp = a;
-    a = b;
-    b = tmp;
     if(m <= 1.0){
         float y = a.y;
-        for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = a.x; x>=b.x; x--){
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -95,19 +92,16 @@ if(a.x > b.x && a.y < b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
 if(a.x > b.x && a.y > b.y){
-    Point2D tmp = a;
-    a = b;
-    b = tmp;
     if(m <= 1.0){
         float y = a.y;
-        for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = a.x; x>=b.x; x--){
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -115,8 +109,8 @@ if(a.x > b.x && a.y > b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
@@ -139,7 +133,7 @@ if(a.x < b.x && a.y < b.y){
     if(m <= 1.0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -147,7 +141,7 @@ if(a.x < b.x && a.y < b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
@@ -156,7 +150,7 @@ if(a.x < b.x && a.y > b.y){
     if(m <= 1.0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -164,19 +158,16 @@ if(a.x < b.x && a.y > b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
 }
 if(a.x > b.x && a.y < b.y){
-    Point2D tmp = a;
-    a = b;
-    b = tmp;
     if(m <= 1.0){
         float y = a.y;
-        for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = a.x; x>=b.x; x--){
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -184,19 +175,16 @@ if(a.x > b.x && a.y < b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
 if(a.x > b.x && a.y > b.y){
-    Point2D tmp = a;
-    a = b;
-    b = tmp;
     if(m <= 1.0){
         float y = a.y;
-        for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = a.x; x>=b.x; x--){
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -204,8 +192,8 @@ if(a.x > b.x && a.y > b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
@@ -240,7 +228,7 @@ if(a.x < b.x && a.y < b.y){
     if(m <= 1.0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -248,7 +236,7 @@ if(a.x < b.x && a.y < b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
@@ -257,7 +245,7 @@ if(a.x < b.x && a.y > b.y){
     if(m <= 1.0){
         float y = a.y;
         for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -265,19 +253,16 @@ if(a.x < b.x && a.y > b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
 }
 if(a.x > b.x && a.y < b.y){
-    Point2D tmp = a;
-    a = b;
-    b = tmp;
     if(m <= 1.0){
         float y = a.y;
-        for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = a.x; x>=b.x; x--){
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -285,19 +270,16 @@ if(a.x > b.x && a.y < b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y<=b.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
 if(a.x > b.x && a.y > b.y){
-    Point2D tmp = a;
-    a = b;
-    b = tmp;
     if(m <= 1.0){
         float y = a.y;
-        for(int x = a.x; x<=b.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = a.x; x>=b.x; x--){
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -305,8 +287,8 @@ if(a.x > b.x && a.y > b.y){
         m = dx/dy;
         float x = a.x;
         for(int y = a.y; y>=b.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
@@ -325,7 +307,7 @@ if(p1.x < p2.x && p1.y < p2.y){
     if(m <= 1.0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -333,7 +315,7 @@ if(p1.x < p2.x && p1.y < p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
@@ -342,7 +324,7 @@ if(p1.x < p2.x && p1.y > p2.y){
     if(m <= 1.0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -350,19 +332,16 @@ if(p1.x < p2.x && p1.y > p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
 }
 if(p1.x > p2.x && p1.y < p2.y){
-    Point2D tmp = p1;
-    p1 = p2;
-    p2 = tmp;
     if(m <= 1.0){
         float y = p1.y;
-        for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = p1.x; x>=p2.x; x--){
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -370,19 +349,16 @@ if(p1.x > p2.x && p1.y < p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
 if(p1.x > p2.x && p1.y > p2.y){
-    Point2D tmp = p1;
-    p1 = p2;
-    p2 = tmp;
     if(m <= 1.0){
         float y = p1.y;
-        for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = p1.x; x>=p2.x; x--){
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -390,8 +366,8 @@ if(p1.x > p2.x && p1.y > p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
@@ -414,7 +390,7 @@ if(p1.x < p2.x && p1.y < p2.y){
     if(m <= 1.0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -422,7 +398,7 @@ if(p1.x < p2.x && p1.y < p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
@@ -431,7 +407,7 @@ if(p1.x < p2.x && p1.y > p2.y){
     if(m <= 1.0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -439,19 +415,16 @@ if(p1.x < p2.x && p1.y > p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
 }
 if(p1.x > p2.x && p1.y < p2.y){
-    Point2D tmp = p1;
-    p1 = p2;
-    p2 = tmp;
     if(m <= 1.0){
         float y = p1.y;
-        for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = p1.x; x>=p2.x; x--){
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -459,19 +432,16 @@ if(p1.x > p2.x && p1.y < p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
 if(p1.x > p2.x && p1.y > p2.y){
-    Point2D tmp = p1;
-    p1 = p2;
-    p2 = tmp;
     if(m <= 1.0){
         float y = p1.y;
-        for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = p1.x; x>=p2.x; x--){
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -479,8 +449,8 @@ if(p1.x > p2.x && p1.y > p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
@@ -515,7 +485,7 @@ if(p1.x < p2.x && p1.y < p2.y){
     if(m <= 1.0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -523,7 +493,7 @@ if(p1.x < p2.x && p1.y < p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
@@ -532,7 +502,7 @@ if(p1.x < p2.x && p1.y > p2.y){
     if(m <= 1.0){
         float y = p1.y;
         for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -540,19 +510,16 @@ if(p1.x < p2.x && p1.y > p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
+            putpixel(buffer, int(x), y, col);
             x+=m;
         }
     }
 }
 if(p1.x > p2.x && p1.y < p2.y){
-    Point2D tmp = p1;
-    p1 = p2;
-    p2 = tmp;
     if(m <= 1.0){
         float y = p1.y;
-        for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = p1.x; x>=p2.x; x--){
+            putpixel(buffer, x, int(y), col);
             y+=m;
         }
     }
@@ -560,19 +527,16 @@ if(p1.x > p2.x && p1.y < p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y<=p2.y; y++){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }
 if(p1.x > p2.x && p1.y > p2.y){
-    Point2D tmp = p1;
-    p1 = p2;
-    p2 = tmp;
     if(m <= 1.0){
         float y = p1.y;
-        for(int x = p1.x; x<=p2.x; x++){
-            putpixel(buffer, x, int(y+0.5), col);
+        for(int x = p1.x; x>=p2.x; x--){
+            putpixel(buffer, x, int(y), col);
             y-=m;
         }
     }
@@ -580,8 +544,8 @@ if(p1.x > p2.x && p1.y > p2.y){
         m = dx/dy;
         float x = p1.x;
         for(int y = p1.y; y>=p2.y; y--){
-            putpixel(buffer, int(x+0.5), y, col);
-            x+=m;
+            putpixel(buffer, int(x), y, col);
+            x-=m;
         }
     }
 }

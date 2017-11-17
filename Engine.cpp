@@ -233,7 +233,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     if(i==0){
         cout << "Set point A and B of first Line: "<<endl;
         cin >> ax >> ay >> bx >> by;
-    }
+   }
     else{
         cout << "Set point B next Line: "<<endl;
         ax = bx;

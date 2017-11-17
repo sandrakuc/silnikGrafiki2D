@@ -32,10 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Engine.cpp">
-			<Option weight="100" />
-		</Unit>
+		<Unit filename="Engine.cpp" />
 		<Unit filename="Engine.h" />
+		<Unit filename="LineSegment.cpp" />
+		<Unit filename="LineSegment.h" />
 		<Unit filename="Point2D.cpp" />
 		<Unit filename="Point2D.h" />
 		<Unit filename="main.cpp">
