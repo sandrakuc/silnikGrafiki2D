@@ -5,6 +5,7 @@
 #include "Point2D.h"
 #include "LineSegment.h"
 #include "helper/Color.h"
+#include "Filler.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ class Engine
 {
     public:
         int w, h;
+        Filler filler;
         Engine();
         virtual ~Engine();
         BITMAP *initiall(BITMAP *buffer);

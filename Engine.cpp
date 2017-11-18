@@ -10,6 +10,7 @@
 #include "Circle.h"
 #include "helper/Color.h"
 
+
 #define MODE_RGB_INT 1
 #define MODE_RGB_DOUBLE 2
 #define MODE_LIST 3
@@ -27,7 +28,7 @@ LOCK_FUNCTION(increment_speed);
 
 Engine::Engine()
 {
-    //ctor
+    this->filler = Filler();
 }
 
 Engine::~Engine()
@@ -200,7 +201,7 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
 void Engine::tomekTest(BITMAP *buffer) {
 
     Point2D point;
-    point.setXY(100,100);
+    point.setXY(10,10);
 
     vector <Point2D> points;
     points.push_back(point);
@@ -216,9 +217,13 @@ void Engine::tomekTest(BITMAP *buffer) {
     circle.center.setXY(200, 100);
     circle.draw8(buffer, BLUE);
 
+    this->filler.fillBackgroundRecursive(buffer,circle.center, ORANGE);
+
+    Point2D pointToFill(100,100);
+    this->filler.fillBackgroundIterative(buffer,pointToFill,  ORANGE);
 
     blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
-    Sleep(5*1000);
+    Sleep(3*1000);
 }
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
