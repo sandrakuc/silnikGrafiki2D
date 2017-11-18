@@ -221,16 +221,16 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     /*cout << "How many lines do you want draw?" << endl;
     cin >> n;
     for(int i=0; i<n; i++){
-    if(i==0){
+    if(i==0){*/
         cout << "Set point A and B of first Line: "<<endl;
         cin >> ax >> ay >> bx >> by;
-   }
+   /*}
     else{
         cout << "Set point B next Line: "<<endl;
         ax = bx;
         ay = by;
         cin >> bx >> by;
-    }
+    }*/
     if(ax < 0 || ay < 0 || bx < 0 || by < 0)
         errMsg();
     a.setXY(ax, ay);
@@ -238,7 +238,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
     line.setAB(a, b);
     cout << "DEBUG: A: " << line.getAX() << ", " <<line.getAY() << endl;
     cout << "DEBUG: B: " << line.getBX() << ", " <<line.getBY() << endl;
-    lines.push_back(line);
+   /* lines.push_back(line);
     }*/
 
     cout << "Choose mode of color: "<<endl;
@@ -278,26 +278,26 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             clear_to_color(buffer, makecol(0,0,0));
             if(mode == MODE_RGB_INT){
                 //drawGroupOfPoints(points, buffer, ri, gi, bi);
-                //line.drawLine(buffer, ri, gi, bi);
+                line.drawLine(buffer, ri, gi, bi);
                 //line.polyline(buffer, lines, ri, gi, bi);
-                v.Triangle(buffer, pt1, pt2, pt3, ri, gi, bi);
+                //v.Triangle(buffer, pt1, pt2, pt3, ri, gi, bi);
             }
 
             if(mode == MODE_RGB_DOUBLE){
-                //line.drawLine(buffer, rd, gd, bd);
+                line.drawLine(buffer, rd, gd, bd);
                 //drawGroupOfPoints(points, buffer, rd, gd, bd);
                 //line.polyline(buffer, lines, rd, gd, bd);
-                v.Triangle(buffer, pt1, pt2, pt3, rd, gd, bd);
+                //v.Triangle(buffer, pt1, pt2, pt3, rd, gd, bd);
             }
 
 
             if(mode == MODE_LIST){
                 //drawGroupOfPoints(points, buffer, color);
-                //line.drawLine(buffer, color);
+                line.drawLine(buffer, color);
                // line.polyline(buffer, lines, color);
-               v.Triangle(buffer, pt1, pt2, pt3, color);
+               //v.Triangle(buffer, pt1, pt2, pt3, color);
             }
-            /*if(key[KEY_UP]){
+            if(key[KEY_UP]){
                 pt1.y--;
                 pt2.y--;
                 pt3.y--;
@@ -322,7 +322,9 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
                 pt4.x--;
             }
             v.setVertices(pt1, pt2, pt3, pt4);
-            v.clippingRectangle(buffer);*/
+            v.clippingRectangle(buffer);
+            if(key[KEY_ENTER])
+                v.cutLine(buffer, line);
 
             blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H ); //cos zrobic zeby przy fullscreenie ekran byl ideolo czarny
             speed--;

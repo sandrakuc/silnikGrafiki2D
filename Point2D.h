@@ -7,6 +7,7 @@ class Point2D{
 
 public:
     int x, y;
+    int b[4];
     Point2D();
     void setXY(int x, int y);
 protected:
