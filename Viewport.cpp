@@ -47,6 +47,24 @@ for(int i=0; i<4; i++){
 }
 }
 
+void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int red, int green, int blue){
+    walls[0].setAB(p1, p2);
+    walls[1].setAB(p2, p3);
+    walls[2].setAB(p3, p1);
+    for(int i=0; i<3; i++){
+        walls[i].drawLine(buffer, red, green, blue);
+    }
+}
+
+void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, double red, double green, double blue){
+    walls[0].setAB(p1, p2);
+    walls[1].setAB(p2, p3);
+    walls[2].setAB(p3, p1);
+    for(int i=0; i<3; i++){
+        walls[i].drawLine(buffer, red, green, blue);
+    }
+}
+
 void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int color){
     walls[0].setAB(p1, p2);
     walls[1].setAB(p2, p3);

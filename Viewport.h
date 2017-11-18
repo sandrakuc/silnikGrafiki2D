@@ -18,6 +18,8 @@ class Viewport
         Point2D getD();
         void clippingRectangle(BITMAP *buffer);
         void Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int color);
+        void Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int red, int green, int blue);
+        void Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, double red, double green, double blue);
     protected:
 
     private:

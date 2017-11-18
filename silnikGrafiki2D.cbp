@@ -38,6 +38,8 @@
 		<Unit filename="LineSegment.h" />
 		<Unit filename="Point2D.cpp" />
 		<Unit filename="Point2D.h" />
+		<Unit filename="Viewport.cpp" />
+		<Unit filename="Viewport.h" />
 		<Unit filename="main.cpp">
 			<Option weight="100" />
 		</Unit>
