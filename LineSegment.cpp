@@ -1,10 +1,9 @@
 #include <iostream>
 #include "LineSegment.h"
 #include "Point2D.h"
+#include "helper/Color.h"
 
 using namespace std;
-
-enum colors{RED = 1, ORANGE = 2, YELLOW = 3, GREEN = 4, CYAN = 5, BLUE = 6, VIOLET = 7, WHITE = 8};
 
 LineSegment::LineSegment()
 {

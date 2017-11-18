@@ -1,18 +1,20 @@
 #include <allegro.h>
 #include <iostream>
+#include <winalleg.h>
+
 #include <vector>
 #include "Engine.h"
 #include "Point2D.h"
 #include "LineSegment.h"
 #include "Viewport.h"
+#include "Circle.h"
+#include "helper/Color.h"
 
 #define MODE_RGB_INT 1
 #define MODE_RGB_DOUBLE 2
 #define MODE_LIST 3
 
 using namespace std;
-
-enum colors{RED = 1, ORANGE = 2, YELLOW = 3, GREEN = 4, CYAN = 5, BLUE = 6, VIOLET = 7, WHITE = 8};
 
 volatile long speed = 0;
 
@@ -68,7 +70,7 @@ void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r,
     }
 }
 
-void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int color){
+void Engine::drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, DefinedColor color){
     if(color == RED){
     for(int i = 0; i<points.size(); i++){
         putpixel(buffer, points[i].x, points[i].y, makecol(255,0,0));
@@ -195,7 +197,32 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
     return buffer;
 }
 
+void Engine::tomekTest(BITMAP *buffer) {
+
+    Point2D point;
+    point.setXY(100,100);
+
+    vector <Point2D> points;
+    points.push_back(point);
+
+    drawGroupOfPoints(points, buffer, ORANGE);
+
+    Point2D pointOfCenter(100,100);
+    Circle circle = Circle();
+    circle.center = pointOfCenter;
+    circle.radious = 50;
+    circle.draw4(buffer, 100,100,100);
+
+    circle.center.setXY(200, 100);
+    circle.draw8(buffer, BLUE);
+
+
+    blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
+    Sleep(5*1000);
+}
+
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
+
     Point2D p, a, b, pt1, pt2, pt3, pt4;
     pt1.setXY(100,150);
     pt2.setXY(300,150);

@@ -21,7 +21,7 @@ cout << "5 - windowed, resolution: 800x600" <<endl;
 cin >> mode;
 Engine *engine = Engine::getInstance();
 buffer = engine->initiall(mode, buffer);
-engine->mainLoop(engine, buffer);
+engine->tomekTest(buffer);
 destroy_bitmap(buffer);
 allegro_exit();
 return 0;

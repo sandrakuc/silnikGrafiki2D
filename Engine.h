@@ -4,7 +4,7 @@
 #include <allegro.h>
 #include "Point2D.h"
 #include "LineSegment.h"
-
+#include "helper/Color.h"
 
 using namespace std;
 
@@ -19,7 +19,8 @@ class Engine
         static Engine *getInstance();
         int errMsg();
         void mainLoop(Engine *engine, BITMAP *buffer);
-        void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int color);
+        void tomekTest(BITMAP *buffer);
+        void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, DefinedColor color);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, int g, int b);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r, double g, double b);
     protected:
