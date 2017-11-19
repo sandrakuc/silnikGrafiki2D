@@ -16,24 +16,24 @@ LineSegment::~LineSegment()
 }
 
 void LineSegment::setAB(Point2D p1, Point2D p2){
-a = p1;
-b = p2;
+    a = p1;
+    b = p2;
 }
 
 int LineSegment::getAX(){
-return a.x;
+    return a.x;
 }
 
 int LineSegment::getAY(){
-return a.y;
+    return a.y;
 }
 
 int LineSegment::getBX(){
-return b.x;
+    return b.x;
 }
 
 int LineSegment::getBY(){
-return b.y;
+    return b.y;
 }
 
 void LineSegment::draw(BITMAP *buffer, int red, int green, int blue){
@@ -50,6 +50,43 @@ void LineSegment::draw(BITMAP *buffer, DefinedColor color){
     int col = Color::createIntColor(color);
     this->drawLine(buffer, this->a, this->b, col);
 }
+
+void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, int red, int green, int blue){
+    for(int i = 0; i<lines.size(); i++){
+        int col = Color::createIntColor(red, green, blue);
+        drawLine(buffer, lines[i].a, lines[i].b, col);
+    }
+}
+
+void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, double red, double green, double blue){
+    for(int i = 0; i<lines.size(); i++){
+        int col = Color::createIntColor(red, green, blue);
+        drawLine(buffer, lines[i].a, lines[i].b, col);
+    }
+}
+
+void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, int color){
+    for(int i = 0; i<lines.size(); i++){
+        drawLine(buffer, lines[i].a, lines[i].b, color);
+    }
+}
+
+void LineSegment::moveShape(int x, int y)
+{
+    this->movePoint(this->a, x, y);
+    this->movePoint(this->b, x, y);
+}
+
+void LineSegment::rotateShape(Point2D point, double a)
+{
+
+}
+
+void LineSegment::zoom(Point2D point, int k)
+{
+
+}
+
 
 void LineSegment::drawLine(BITMAP *buffer, Point2D p1, Point2D p2,  int col){
     float dx = p2.x - p1.x;
@@ -128,41 +165,5 @@ void LineSegment::drawLine(BITMAP *buffer, Point2D p1, Point2D p2,  int col){
         }
     }
 }
-
-void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, int red, int green, int blue){
-    for(int i = 0; i<lines.size(); i++){
-        int col = Color::createIntColor(red, green, blue);
-        drawLine(buffer, lines[i].a, lines[i].b, col);
-    }
-}
-
-void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, double red, double green, double blue){
-    for(int i = 0; i<lines.size(); i++){
-        int col = Color::createIntColor(red, green, blue);
-        drawLine(buffer, lines[i].a, lines[i].b, col);
-    }
-}
-
-void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, int color){
-    for(int i = 0; i<lines.size(); i++){
-        drawLine(buffer, lines[i].a, lines[i].b, color);
-    }
-}
-
-void LineSegment::moveShape(int x, int y)
-{
-
-}
-
-void LineSegment::rotateShape(Point2D point, double a)
-{
-
-}
-
-void LineSegment::zoom(Point2D point, int k)
-{
-
-}
-
 
 

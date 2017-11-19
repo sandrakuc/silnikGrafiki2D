@@ -26,3 +26,9 @@ bool Shape::isCollision(Shape& shape)
 {
 
 }
+
+void Shape::movePoint(Point2D &point, int x, int y)
+{
+    point.x = point.x+x;
+    point.y = point.y+y;
+}

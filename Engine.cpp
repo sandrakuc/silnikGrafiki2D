@@ -224,6 +224,16 @@ void Engine::tomekTest(BITMAP *buffer) {
     Point2D pointToFill(100,100);
     this->filler.fillBackgroundIterative(buffer,pointToFill,  ORANGE);
 
+    LineSegment line = LineSegment();
+    Point2D aa = Point2D(300,300);
+    Point2D bb = Point2D(300,400);
+    line.setAB(aa, bb);
+
+    line.draw(buffer, ORANGE);
+
+    line.moveShape(10,10);
+    line.draw(buffer, RED);
+
     blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
     Sleep(3*1000);
 }

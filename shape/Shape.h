@@ -22,9 +22,12 @@ class Shape
         virtual void rotateShape(Point2D point, double a) = 0;
         virtual void zoom(Point2D point, int k) = 0;
     protected:
+        void movePoint(Point2D &point, int x, int y);
+        BoundingBox boundingBox;
 
     private:
-        BoundingBox boundingBox;
+
+
 };
 
 #endif // SHAPE_H
