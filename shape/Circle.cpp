@@ -24,6 +24,21 @@ Circle::~Circle()
     //dtor
 }
 
+void Circle::draw(BITMAP* buffer, int red, int green, int blue)
+{
+    this->draw8(buffer, red, green, blue);
+}
+
+void Circle::draw(BITMAP* buffer, double red, double green, double blue)
+{
+    this->draw8(buffer, red, green, blue);
+}
+
+void Circle::draw(BITMAP* buffer, DefinedColor color)
+{
+    this->draw8(buffer, color);
+}
+
 void Circle::draw4(BITMAP *buffer, int red, int green, int blue)
 {
     int color = Color::createIntColor(red, green, blue);
@@ -91,6 +106,24 @@ void Circle::draw8(BITMAP *buffer, int color)
         putpixel(buffer, this->center.x + y, this->center.y - x, color);
         putpixel(buffer, this->center.x + x, this->center.y - y, color);
     }
+}
+
+
+
+
+void Circle::moveShape(int x, int y)
+{
+    this->movePoint(this->center, x, y);
+}
+
+void Circle::rotateShape(Point2D point, double a)
+{
+
+}
+
+void Circle::zoom(Point2D point, int k)
+{
+
 }
 
 

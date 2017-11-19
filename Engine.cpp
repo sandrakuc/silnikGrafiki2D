@@ -214,7 +214,9 @@ void Engine::tomekTest(BITMAP *buffer) {
     Circle circle = Circle();
     circle.center = pointOfCenter;
     circle.radious = 50;
-    circle.draw4(buffer, 100,100,100);
+    circle.draw4(buffer, ORANGE);
+    circle.moveShape(5,100);
+    circle.draw4(buffer, RED);
 
     circle.center.setXY(200, 100);
     circle.draw8(buffer, BLUE);

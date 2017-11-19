@@ -4,8 +4,8 @@
 #include <allegro.h>
 #include "Point2D.h"
 #include "helper/Color.h"
-
-class Circle
+#include "Shape.h"
+class Circle: public Shape
 {
     public:
         Circle();
@@ -13,12 +13,22 @@ class Circle
         virtual ~Circle();
         Point2D center;
         int radious;
+
+        void draw(BITMAP *buffer, int red, int green, int blue);
+        void draw(BITMAP *buffer, double red, double green, double blue);
+        void draw(BITMAP *buffer, DefinedColor color);
+
         void draw4(BITMAP *buffer, int red, int green, int blue);
         void draw4(BITMAP *buffer, double red, double green, double blue);
         void draw4(BITMAP *buffer, DefinedColor color);
         void draw8(BITMAP *buffer, int red, int green, int blue);
         void draw8(BITMAP *buffer, double red, double green, double blue);
         void draw8(BITMAP *buffer, DefinedColor color);
+
+        void moveShape(int x, int y);
+        void rotateShape(Point2D point, double a);
+        void zoom(Point2D point, int k);
+
     protected:
 
     private:
