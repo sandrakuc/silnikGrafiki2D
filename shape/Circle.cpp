@@ -126,4 +126,15 @@ void Circle::zoom(Point2D point, int k)
 
 }
 
+void Circle::updateBoundingBox()
+{
+    this->boundingBox.reset();
+
+    Point2D edgeTopLeftCorner = Point2D(this->center.x - this->radious, this->center.y - this->radious );
+    Point2D edgeBottomRightCorner = Point2D(this->center.x + this->radious, this->center.y + this->radious );
+    this->boundingBox.addEdgeShapePoint(edgeTopLeftCorner);
+    this->boundingBox.addEdgeShapePoint(edgeBottomRightCorner);
+}
+
+
 

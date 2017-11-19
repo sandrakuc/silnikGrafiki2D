@@ -36,7 +36,7 @@ class LineSegment: public Shape
         void zoom(Point2D point, int k);
 
     protected:
-
+        void updateBoundingBox();
     private:
         void drawLine(BITMAP *buffer,Point2D p1, Point2D p2, int color);
 };

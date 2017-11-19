@@ -23,7 +23,7 @@ class Pixel : public Shape
 
     protected:
         void draw(BITMAP *buffer, int color);
-
+        void updateBoundingBox();
     private:
 };
 

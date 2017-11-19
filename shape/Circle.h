@@ -29,7 +29,7 @@ class Circle: public Shape
         void zoom(Point2D point, int k);
 
     protected:
-
+        void updateBoundingBox();
     private:
         void draw4(BITMAP *buffer, int color);
         void draw8(BITMAP *buffer, int color);

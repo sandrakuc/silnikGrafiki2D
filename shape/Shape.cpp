@@ -10,12 +10,25 @@ Shape::~Shape()
     //dtor
 }
 
-
-
-void Shape::drawBoundingBox(BITMAP* buffer)
+void Shape::drawBoundingBox(BITMAP* buffer, int red, int green, int blue)
 {
-
+    this->updateBoundingBox();
+    this->boundingBox.draw(buffer, red, green, blue);
 }
+
+void Shape::drawBoundingBox(BITMAP* buffer, double red, double green, double blue)
+{
+    this->updateBoundingBox();
+    this->boundingBox.draw(buffer, red, green, blue);
+}
+
+void Shape::drawBoundingBox(BITMAP* buffer, DefinedColor color)
+{
+    this->updateBoundingBox();
+    this->boundingBox.draw(buffer, color);
+}
+
+
 
 BoundingBox Shape::getBoundingBox()
 {

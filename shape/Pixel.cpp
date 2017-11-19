@@ -49,3 +49,10 @@ void Pixel::draw(BITMAP* buffer, int color)
 {
     putpixel(buffer, this->point.x, this->point.y, color);
 }
+
+void Pixel::updateBoundingBox()
+{
+    this->boundingBox.reset();
+    this->boundingBox.addEdgeShapePoint(this->point);
+}
+

@@ -62,3 +62,12 @@ void Triangle::draw(BITMAP* buffer, int color)
 
 
 }
+
+
+void Triangle::updateBoundingBox()
+{
+    this->boundingBox.reset();
+    this->boundingBox.addEdgeShapePoint(this->corner1);
+    this->boundingBox.addEdgeShapePoint(this->corner2);
+    this->boundingBox.addEdgeShapePoint(this->corner3);
+}

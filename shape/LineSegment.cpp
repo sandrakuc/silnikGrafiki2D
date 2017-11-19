@@ -93,6 +93,14 @@ void LineSegment::zoom(Point2D point, int k)
 
 }
 
+void LineSegment::updateBoundingBox()
+{
+    this->boundingBox.reset();
+    this->boundingBox.addEdgeShapePoint(this->a);
+    this->boundingBox.addEdgeShapePoint(this->b);
+}
+
+
 
 void LineSegment::drawLine(BITMAP *buffer, Point2D p1, Point2D p2,  int col){
     float dx = p2.x - p1.x;

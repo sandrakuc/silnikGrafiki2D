@@ -14,7 +14,12 @@ class Shape
         virtual void draw(BITMAP *buffer, double red, double green, double blue) =0;
         virtual void draw(BITMAP *buffer, DefinedColor color) =0;
 
-        void drawBoundingBox(BITMAP *buffer);
+        void drawBoundingBox(BITMAP *buffer, int red, int green, int blue);
+        void drawBoundingBox(BITMAP *buffer, double red, double green, double blue);
+        void drawBoundingBox(BITMAP *buffer, DefinedColor color);
+
+
+
         BoundingBox getBoundingBox();
         bool isCollision(Shape &shape);
 
@@ -24,7 +29,7 @@ class Shape
     protected:
         void movePoint(Point2D &point, int x, int y);
         BoundingBox boundingBox;
-
+        virtual void updateBoundingBox() =0;
     private:
 
 

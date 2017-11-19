@@ -209,11 +209,14 @@ void Engine::tomekTest(BITMAP *buffer) {
     circle.center = pointOfCenter;
     circle.radious = 50;
     circle.draw4(buffer, ORANGE);
+
+
     circle.moveShape(5,100);
     circle.draw4(buffer, RED);
 
     circle.center.setXY(200, 100);
     circle.draw8(buffer, BLUE);
+    circle.drawBoundingBox(buffer, WHITE);
 
     this->filler.fillBackgroundRecursive(buffer,circle.center, ORANGE);
 
@@ -222,10 +225,12 @@ void Engine::tomekTest(BITMAP *buffer) {
 
     LineSegment line = LineSegment();
     Point2D aa = Point2D(300,300);
-    Point2D bb = Point2D(300,400);
+    Point2D bb = Point2D(330,400);
     line.setAB(aa, bb);
 
     line.draw(buffer, ORANGE);
+    line.drawBoundingBox(buffer, WHITE);
+
 
     line.moveShape(10,10);
     line.draw(buffer, RED);
@@ -240,6 +245,8 @@ void Engine::tomekTest(BITMAP *buffer) {
     triangle.draw(buffer, ORANGE);
     triangle.moveShape(-10,-10);
     triangle.draw(buffer, RED);
+    triangle.drawBoundingBox(buffer, WHITE);
+
 
     Pixel pixel = Pixel();
     Point2D p1 = Point2D(5,5);
