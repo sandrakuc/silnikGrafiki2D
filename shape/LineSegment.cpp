@@ -51,6 +51,12 @@ void LineSegment::draw(BITMAP *buffer, DefinedColor color){
     this->drawLine(buffer, this->a, this->b, col);
 }
 
+void LineSegment::draw(BITMAP* buffer, int color)
+{
+    this->drawLine(buffer, this->a, this->b, color);
+}
+
+
 void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, int red, int green, int blue){
     for(int i = 0; i<lines.size(); i++){
         int col = Color::createIntColor(red, green, blue);

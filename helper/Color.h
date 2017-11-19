@@ -15,6 +15,8 @@ class Color
          */
         static int createIntColor(double red, double green, double blue);
         static int createIntColor(DefinedColor color);
+
+
     protected:
 
     private:

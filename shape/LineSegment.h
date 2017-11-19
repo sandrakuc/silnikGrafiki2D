@@ -22,6 +22,7 @@ class LineSegment: public Shape
         void draw(BITMAP *buffer, int red, int green, int blue);
         void draw(BITMAP *buffer, double red, double green, double blue);
         void draw(BITMAP *buffer, DefinedColor color);
+        void draw(BITMAP *buffer, int color);
 
         void polyline(BITMAP *buffer, vector<LineSegment> lines, int red, int green, int blue);
         void polyline(BITMAP *buffer, vector<LineSegment> lines, double red, double green, double blue);

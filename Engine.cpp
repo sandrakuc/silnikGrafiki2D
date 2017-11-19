@@ -9,6 +9,7 @@
 #include "shape/LineSegment.h"
 #include "Viewport.h"
 #include "shape/Circle.h"
+#include "shape/Triangle.h"
 #include "helper/Color.h"
 
 
@@ -235,6 +236,18 @@ void Engine::tomekTest(BITMAP *buffer) {
 
     line.moveShape(10,10);
     line.draw(buffer, RED);
+
+    Triangle triangle = Triangle();
+    Point2D t1 = Point2D(400,400);
+    Point2D t2 = Point2D(450,450);
+    Point2D t3 = Point2D(450,500);
+    triangle.corner1 = t1;
+    triangle.corner2 = t2;
+    triangle.corner3 = t3;
+    triangle.draw(buffer, ORANGE);
+    triangle.moveShape(-10,-10);
+    triangle.draw(buffer, RED);
+
 
     blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
     Sleep(3*1000);
