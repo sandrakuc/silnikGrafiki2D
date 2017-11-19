@@ -5,7 +5,7 @@
 #include <vector>
 #include "Engine.h"
 #include "Point2D.h"
-#include "LineSegment.h"
+#include "shape/LineSegment.h"
 #include "Viewport.h"
 #include "Circle.h"
 #include "helper/Color.h"
@@ -224,6 +224,24 @@ void Engine::tomekTest(BITMAP *buffer) {
 
     blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
     Sleep(3*1000);
+}
+
+void Engine::sandraTest(BITMAP *buffer){
+Point2D a, b;
+Point2D p1, p2, p3, p4;
+a.setXY(10, 25);
+b.setXY(100, 125);
+p1.setXY(50, 100);
+p2.setXY(150,100);
+p3.setXY(150,300);
+p4.setXY(50,300);
+LineSegment line;
+line.setAB(a,b);
+line.drawLine(buffer, WHITE);
+Viewport v;
+v.setVertices(p1, p2, p3, p4);
+v.clippingRectangle(buffer);
+v.cutLine(buffer, line);
 }
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){

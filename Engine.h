@@ -22,6 +22,7 @@ class Engine
         int errMsg();
         void mainLoop(Engine *engine, BITMAP *buffer);
         void tomekTest(BITMAP *buffer);
+        void sandraTest(BITMAP *buffer);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, DefinedColor color);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, int g, int b);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r, double g, double b);

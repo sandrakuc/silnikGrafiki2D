@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1511085723 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
+1511092508 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
 	<iostream>
 	<allegro.h>
 	<vector>
@@ -7,7 +7,7 @@
 	"Point2D.h"
 	"LineSegment.h"
 
-1511091565 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
+1511092872 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 	<vector>
 	<allegro.h>
 	"Point2D.h"
@@ -15,14 +15,14 @@
 	"helper/Color.h"
 	"Filler.h"
 
-1511091426 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1511092872 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	<iostream>
 	<winalleg.h>
 	<vector>
 	"Engine.h"
 	"Point2D.h"
-	"LineSegment.h"
+	"shape/LineSegment.h"
 	"Viewport.h"
 	"Circle.h"
 	"helper/Color.h"
@@ -30,7 +30,7 @@
 
 1511091565 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.h
 
-1510851361 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.h
+1511092708 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\linesegment.h
 	<vector>
 	<allegro.h>
 	"Point2D.h"
@@ -47,16 +47,16 @@
 	"Point2D.h"
 	"helper/Color.h"
 
-1511091648 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
+1511092529 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
 	<vector>
 	<allegro.h>
 	"Viewport.h"
 	"Point2D.h"
 	"LineSegment.h"
 
-1511091648 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
+1511092529 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
 	"Point2D.h"
-	"LineSegment.h"
+	"shape/LineSegment.h"
 
 1511086833 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\circle.cpp
 	"Circle.h"
@@ -77,10 +77,11 @@
 	<allegro.h>
 	"helper/Color.h"
 
-1511091426 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shape.h
+1511092529 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shape.h
 	<allegro.h>
 	"../Point2D.h"
 	"../BoundingBox.h"
+	"../helper/Color.h"
 
 1511091426 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\boundingbox.h
 	<allegro.h>
@@ -100,4 +101,30 @@
 
 1511091659 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\mouse.h
 	"Point2D.h"
+
+1511091426 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\boundingbox.cpp
+	"BoundingBox.h"
+
+1511091426 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shape.cpp
+	"Shape.h"
+
+1511091426 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shapeobject.cpp
+	"ShapeObject.h"
+
+1511091426 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shapeobject.h
+	<allegro.h>
+	"../Point2D.h"
+	"Shape.h"
+
+1511092761 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.h
+	<vector>
+	<allegro.h>
+	"../Point2D.h"
+	"Shape.h"
+
+1511092774 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.cpp
+	<iostream>
+	"LineSegment.h"
+	"../Point2D.h"
+	"../helper/Color.h"
 
