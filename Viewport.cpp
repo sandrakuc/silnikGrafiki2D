@@ -77,7 +77,7 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
 
     int andTab[4] = {p1.b[0] & p2.b[0], p1.b[1] & p2.b[1], p1.b[2] & p2.b[2], p1.b[3] & p2.b[3]};
 
-    if(memcmp(p1.b, tabZero, sizeof(p1.b))==0 && memcmp(p2.b, tabZero, sizeof(p2.b))){
+    if(memcmp(p1.b, tabZero, sizeof(p1.b))==0 && memcmp(p2.b, tabZero, sizeof(p2.b))==0){
         line.draw(buffer, GREEN);
         return;
     }else{

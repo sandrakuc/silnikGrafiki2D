@@ -47,7 +47,7 @@
 	"Point2D.h"
 	"helper/Color.h"
 
-1511095580 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
+1511099793 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
 	<vector>
 	<allegro.h>
 	"Viewport.h"
