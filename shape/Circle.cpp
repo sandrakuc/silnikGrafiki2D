@@ -1,8 +1,8 @@
 #include "Circle.h"
 
 #include <allegro.h>
-#include "Point2D.h"
-#include "helper/Color.h"
+#include "../Point2D.h"
+#include "../helper/Color.h"
 #include <math.h>
 
 #define M_PI		3.14159265358979323846

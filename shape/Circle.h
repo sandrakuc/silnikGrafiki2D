@@ -2,8 +2,7 @@
 #define CIRCLE_H
 
 #include <allegro.h>
-#include "Point2D.h"
-#include "helper/Color.h"
+#include "../helper/Color.h"
 #include "Shape.h"
 class Circle: public Shape
 {

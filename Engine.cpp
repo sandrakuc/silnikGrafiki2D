@@ -8,7 +8,7 @@
 #include "shape/Shape.h"
 #include "shape/LineSegment.h"
 #include "Viewport.h"
-#include "Circle.h"
+#include "shape/Circle.h"
 #include "helper/Color.h"
 
 

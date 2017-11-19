@@ -52,8 +52,12 @@ for(int i=0; i<4; i++){
 void Viewport::cutLine(BITMAP *buffer, LineSegment line){
     int tabZero[] = {0, 0, 0, 0};
     Point2D pp, p1, p2;
-    p1 = line.a;
-    p2 = line.b;
+    p1.setXY(line.a.x, line.a.y);
+    p2.setXY(line.b.x, line.b.y);
+    for(int i = 0; i < 4; i++){
+        p1.b[i] = 0;
+        p2.b[i] = 0;
+    }
     if(p1.y <= a.y)
         p1.b[0] = 1;
     if(p1.y >= c.y)
@@ -101,6 +105,7 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
+                return;
             }
             if(p1.b[1] == 1){
                 pp.x = p1.x + ((c.y - p1.y)*(p2.x - p1.x)/(p2.y - p1.y));
@@ -108,6 +113,7 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
+                return;
 
             }
             if(p1.b[2] == 1){
@@ -116,6 +122,7 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
+                return;
             }
             if(p1.b[3] == 1){
                 pp.y = p1.y + ((a.x - p1.x)*(p2.y - p1.y)/(p2.x - p1.x));
@@ -123,6 +130,7 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
+                return;
 
             }
 
