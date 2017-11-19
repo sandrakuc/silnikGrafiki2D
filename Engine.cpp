@@ -26,6 +26,7 @@ END_OF_FUNCTION(increment_speed);
 LOCK_VARIABLE(speed);
 LOCK_FUNCTION(increment_speed);
 
+
 Engine::Engine()
 {
     this->filler = Filler();
@@ -247,6 +248,7 @@ while(!key[KEY_ESC]){
         if(key[KEY_ENTER])
             v.cutLine(buffer, line);
         blit(buffer, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
+        Sleep(3*1000);
         speed--;
         if(KEY_ESC)
             break;
