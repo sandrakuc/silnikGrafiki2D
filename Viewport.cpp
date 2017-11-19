@@ -75,13 +75,11 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
     if(p2.x <= a.x)
         p2.b[3] = 1;
 
-    int andTab[4] = {p1.b[0] & p2.b[0], p1.b[1] & p2.b[1], p1.b[2] & p2.b[2], p1.b[3] & p2.b[3]};
-
     if(memcmp(p1.b, tabZero, sizeof(p1.b))==0 && memcmp(p2.b, tabZero, sizeof(p2.b))==0){
         line.draw(buffer, GREEN);
         return;
     }else{
-        if(memcmp(andTab, tabZero, sizeof(andTab))!= 0){
+        if(memcmp(p1.b, tabZero, sizeof(p1.b))!= 0 && memcmp(p2.b, tabZero, sizeof(p2.b))!=0){
             line.draw(buffer, RED);
             return;
         }
@@ -105,7 +103,6 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
-                return;
             }
             if(p1.b[1] == 1){
                 pp.x = p1.x + ((c.y - p1.y)*(p2.x - p1.x)/(p2.y - p1.y));
@@ -113,7 +110,6 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
-                return;
 
             }
             if(p1.b[2] == 1){
@@ -122,7 +118,6 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
-                return;
             }
             if(p1.b[3] == 1){
                 pp.y = p1.y + ((a.x - p1.x)*(p2.y - p1.y)/(p2.x - p1.x));
@@ -130,15 +125,13 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 LineSegment l;
                 l.setAB(pp, p1);
                 l.draw(buffer, RED);
-                return;
 
             }
-
+        }
 
 
         }
     }
-}
 
 void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int red, int green, int blue){
     walls[0].setAB(p1, p2);
