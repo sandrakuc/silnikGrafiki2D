@@ -3,7 +3,7 @@
 #include <vector>
 #include <allegro.h>
 #include "Point2D.h"
-#include "LineSegment.h"
+#include "shape/LineSegment.h"
 #include "helper/Color.h"
 #include "Filler.h"
 

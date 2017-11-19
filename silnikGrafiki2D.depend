@@ -1,32 +1,32 @@
 # depslib dependency file v1.0
-1511092903 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
+1511095614 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
 	<iostream>
 	<allegro.h>
 	<vector>
 	"Engine.h"
 	"Point2D.h"
-	"LineSegment.h"
+	"shape/LineSegment.h"
 
-1511092872 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
+1511095602 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.h
 	<vector>
 	<allegro.h>
 	"Point2D.h"
-	"LineSegment.h"
+	"shape/LineSegment.h"
 	"helper/Color.h"
 	"Filler.h"
 
-1511092872 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1511095580 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	<iostream>
 	<winalleg.h>
 	<vector>
 	"Engine.h"
 	"Point2D.h"
+	"shape/Shape.h"
 	"shape/LineSegment.h"
 	"Viewport.h"
 	"Circle.h"
 	"helper/Color.h"
-	"shape/Shape.h"
 
 1511091565 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.h
 
@@ -47,14 +47,14 @@
 	"Point2D.h"
 	"helper/Color.h"
 
-1511092985 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
+1511095580 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
 	<vector>
 	<allegro.h>
 	"Viewport.h"
 	"Point2D.h"
 	"shape/LineSegment.h"
 
-1511092529 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
+1511095580 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
 	"Point2D.h"
 	"shape/LineSegment.h"
 
@@ -77,7 +77,7 @@
 	<allegro.h>
 	"helper/Color.h"
 
-1511092529 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shape.h
+1511095580 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\shape.h
 	<allegro.h>
 	"../Point2D.h"
 	"../BoundingBox.h"
@@ -116,13 +116,14 @@
 	"../Point2D.h"
 	"Shape.h"
 
-1511092761 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.h
+1511095580 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.h
 	<vector>
 	<allegro.h>
 	"../Point2D.h"
 	"Shape.h"
+	"../helper/Color.h"
 
-1511092774 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.cpp
+1511095580 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.cpp
 	<iostream>
 	"LineSegment.h"
 	"../Point2D.h"
