@@ -9,7 +9,7 @@
 #include "Viewport.h"
 #include "Circle.h"
 #include "helper/Color.h"
-
+#include "shape/Shape.h"
 
 #define MODE_RGB_INT 1
 #define MODE_RGB_DOUBLE 2
