@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1511092508 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
+1511092903 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
 	<iostream>
 	<allegro.h>
 	<vector>
@@ -47,12 +47,12 @@
 	"Point2D.h"
 	"helper/Color.h"
 
-1511092529 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
+1511092985 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
 	<vector>
 	<allegro.h>
 	"Viewport.h"
 	"Point2D.h"
-	"LineSegment.h"
+	"shape/LineSegment.h"
 
 1511092529 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
 	"Point2D.h"

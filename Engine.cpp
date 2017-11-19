@@ -237,11 +237,21 @@ p3.setXY(150,300);
 p4.setXY(50,300);
 LineSegment line;
 line.setAB(a,b);
-line.drawLine(buffer, WHITE);
 Viewport v;
 v.setVertices(p1, p2, p3, p4);
-v.clippingRectangle(buffer);
-v.cutLine(buffer, line);
+while(!key[KEY_ESC]){
+    if(speed > 0){
+        clear_to_color(buffer, makecol(0,0,0));
+        line.drawLine(buffer, WHITE);
+        v.clippingRectangle(buffer);
+        if(key[KEY_ENTER])
+            v.cutLine(buffer, line);
+        blit(buffer, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
+        speed--;
+        if(KEY_ESC)
+            break;
+}
+}
 }
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
