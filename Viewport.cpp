@@ -2,7 +2,7 @@
 #include <allegro.h>
 #include "Viewport.h"
 #include "Point2D.h"
-#include "LineSegment.h"
+#include "shape/LineSegment.h"
 
 using namespace std;
 
