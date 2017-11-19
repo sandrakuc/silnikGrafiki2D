@@ -45,7 +45,7 @@ return d;
 
 void Viewport::clippingRectangle(BITMAP *buffer){
 for(int i=0; i<4; i++){
-    walls[i].drawLine(buffer, WHITE);
+    walls[i].draw(buffer, WHITE);
 }
 }
 
@@ -74,11 +74,11 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
     int andTab[4] = {p1.b[0] & p2.b[0], p1.b[1] & p2.b[1], p1.b[2] & p2.b[2], p1.b[3] & p2.b[3]};
 
     if(memcmp(p1.b, tabZero, sizeof(p1.b))==0 && memcmp(p2.b, tabZero, sizeof(p2.b))){
-        line.drawLine(buffer, GREEN);
+        line.draw(buffer, GREEN);
         return;
     }else{
         if(memcmp(andTab, tabZero, sizeof(andTab))!= 0){
-            line.drawLine(buffer, RED);
+            line.draw(buffer, RED);
             return;
         }
         else{
@@ -100,14 +100,14 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 pp.y = a.y;
                 LineSegment l;
                 l.setAB(pp, p1);
-                l.drawLine(buffer, RED);
+                l.draw(buffer, RED);
             }
             if(p1.b[1] == 1){
                 pp.x = p1.x + ((c.y - p1.y)*(p2.x - p1.x)/(p2.y - p1.y));
                 pp.y = c.y;
                 LineSegment l;
                 l.setAB(pp, p1);
-                l.drawLine(buffer, RED);
+                l.draw(buffer, RED);
 
             }
             if(p1.b[2] == 1){
@@ -115,14 +115,14 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
                 pp.x = c.x;
                 LineSegment l;
                 l.setAB(pp, p1);
-                l.drawLine(buffer, RED);
+                l.draw(buffer, RED);
             }
             if(p1.b[3] == 1){
                 pp.y = p1.y + ((a.x - p1.x)*(p2.y - p1.y)/(p2.x - p1.x));
                 pp.x = a.x;
                 LineSegment l;
                 l.setAB(pp, p1);
-                l.drawLine(buffer, RED);
+                l.draw(buffer, RED);
 
             }
 
@@ -137,7 +137,7 @@ void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int 
     walls[1].setAB(p2, p3);
     walls[2].setAB(p3, p1);
     for(int i=0; i<3; i++){
-        walls[i].drawLine(buffer, red, green, blue);
+        walls[i].draw(buffer, red, green, blue);
     }
 }
 
@@ -146,15 +146,15 @@ void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, doub
     walls[1].setAB(p2, p3);
     walls[2].setAB(p3, p1);
     for(int i=0; i<3; i++){
-        walls[i].drawLine(buffer, red, green, blue);
+        walls[i].draw(buffer, red, green, blue);
     }
 }
 
-void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, int color){
+void Viewport::Triangle(BITMAP *buffer, Point2D p1, Point2D p2, Point2D p3, DefinedColor color){
     walls[0].setAB(p1, p2);
     walls[1].setAB(p2, p3);
     walls[2].setAB(p3, p1);
     for(int i=0; i<3; i++){
-        walls[i].drawLine(buffer, color);
+        walls[i].draw(buffer, color);
     }
 }

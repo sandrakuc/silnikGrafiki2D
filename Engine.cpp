@@ -5,11 +5,12 @@
 #include <vector>
 #include "Engine.h"
 #include "Point2D.h"
+#include "shape/Shape.h"
 #include "shape/LineSegment.h"
 #include "Viewport.h"
 #include "Circle.h"
 #include "helper/Color.h"
-#include "shape/Shape.h"
+
 
 #define MODE_RGB_INT 1
 #define MODE_RGB_DOUBLE 2
@@ -235,9 +236,11 @@ p1.setXY(50, 100);
 p2.setXY(150,100);
 p3.setXY(150,300);
 p4.setXY(50,300);
+
 LineSegment line;
+
 line.setAB(a,b);
-line.drawLine(buffer, WHITE);
+line.draw(buffer, 10,10,10);
 Viewport v;
 v.setVertices(p1, p2, p3, p4);
 v.clippingRectangle(buffer);
@@ -328,13 +331,13 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
             clear_to_color(buffer, makecol(0,0,0));
             if(mode == MODE_RGB_INT){
                 //drawGroupOfPoints(points, buffer, ri, gi, bi);
-                line.drawLine(buffer, ri, gi, bi);
+                line.draw(buffer, ri, gi, bi);
                 //line.polyline(buffer, lines, ri, gi, bi);
                 //v.Triangle(buffer, pt1, pt2, pt3, ri, gi, bi);
             }
 
             if(mode == MODE_RGB_DOUBLE){
-                line.drawLine(buffer, rd, gd, bd);
+                line.draw(buffer, rd, gd, bd);
                 //drawGroupOfPoints(points, buffer, rd, gd, bd);
                 //line.polyline(buffer, lines, rd, gd, bd);
                 //v.Triangle(buffer, pt1, pt2, pt3, rd, gd, bd);
@@ -343,7 +346,7 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
 
             if(mode == MODE_LIST){
                 //drawGroupOfPoints(points, buffer, color);
-                line.drawLine(buffer, color);
+                line.draw(buffer, (DefinedColor) color);
                // line.polyline(buffer, lines, color);
                //v.Triangle(buffer, pt1, pt2, pt3, color);
             }

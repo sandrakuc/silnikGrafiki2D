@@ -12,7 +12,7 @@ class Shape
         virtual ~Shape();
         virtual void draw(BITMAP *buffer, int red, int green, int blue) =0;
         virtual void draw(BITMAP *buffer, double red, double green, double blue) =0;
-        virtual void draw(DefinedColor color) =0;
+        virtual void draw(BITMAP *buffer, DefinedColor color) =0;
 
         void drawBoundingBox(BITMAP *buffer);
         BoundingBox getBoundingBox();
