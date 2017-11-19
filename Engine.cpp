@@ -256,18 +256,25 @@ void Engine::tomekTest(BITMAP *buffer) {
 }
 
 void Engine::sandraTest(BITMAP *buffer){
-Point2D a, b;
+Point2D a, b, c, d;
 Point2D p1, p2, p3, p4;
 a.setXY(10, 25);
 b.setXY(100, 125);
+c.setXY(230, 90);
+d.setXY(180, 100);
 p1.setXY(50, 100);
 p2.setXY(150,100);
 p3.setXY(150,300);
 p4.setXY(50,300);
 
-LineSegment line;
-line.setAB(a,b);
-line.draw(buffer, 10,10,10);
+LineSegment line1, line2, line3;
+vector<LineSegment> lines;
+line1.setAB(a,b);
+lines.push_back(line1);
+line2.setAB(b,c);
+lines.push_back(line2);
+line3.setAB(c,d);
+lines.push_back(line3);
 Viewport v;
 v.setVertices(p1, p2, p3, p4);
 while(!key[KEY_ESC]){
@@ -298,10 +305,10 @@ while(!key[KEY_ESC]){
                 p4.x--;
             }
         v.setVertices(p1, p2, p3, p4);
-        line.draw(buffer, WHITE);
+        line1.polyline(buffer, lines, WHITE);
         v.clippingRectangle(buffer);
         if(key[KEY_ENTER])
-            v.cutLine(buffer, line);
+            v.cutGroupOfLines(buffer,lines);
         blit(buffer, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
         speed--;
         if(key[KEY_ESC])
