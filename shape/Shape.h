@@ -4,15 +4,17 @@
 #include <allegro.h>
 #include "../Point2D.h"
 #include "../BoundingBox.h"
-
+#include "../helper/Color.h"
 class Shape
 {
     public:
         Shape();
         virtual ~Shape();
-        virtual void draw(BITMAP *buffer) =0;
+        virtual void draw(BITMAP *buffer, int red, int green, int blue) =0;
+        virtual void draw(BITMAP *buffer, double red, double green, double blue) =0;
+        virtual void draw(DefinedColor color) =0;
 
-        virtual void drawBoundingBox(BITMAP *buffer);
+        void drawBoundingBox(BITMAP *buffer);
         BoundingBox getBoundingBox();
         bool isCollision(Shape &shape);
 

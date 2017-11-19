@@ -1,7 +1,7 @@
 #ifndef VIEWPORT_H
 #define VIEWPORT_H
 #include "Point2D.h"
-#include "LineSegment.h"
+#include "shape/LineSegment.h"
 
 
 class Viewport

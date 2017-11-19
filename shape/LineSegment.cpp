@@ -567,3 +567,37 @@ void LineSegment::polyline(BITMAP *buffer, vector<LineSegment> lines, int color)
         drawLine(buffer, lines[i].a, lines[i].b, color);
     }
 }
+
+
+void LineSegment::draw(BITMAP* buffer, int red, int green, int blue)
+{
+
+}
+
+void LineSegment::draw(BITMAP* buffer, double red, double green, double blue)
+{
+
+}
+
+void LineSegment::draw(DefinedColor color)
+{
+
+}
+
+void LineSegment::moveShape(int x, int y)
+{
+
+}
+
+void LineSegment::rotateShape(Point2D point, double a)
+{
+
+}
+
+void LineSegment::zoom(Point2D point, int k)
+{
+
+}
+
+
+
