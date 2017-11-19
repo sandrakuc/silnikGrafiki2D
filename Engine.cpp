@@ -254,20 +254,45 @@ line.draw(buffer, 10,10,10);
 Viewport v;
 v.setVertices(p1, p2, p3, p4);
 while(!key[KEY_ESC]){
-    if(speed > 0){
+        if(speed > 0){
         clear_to_color(buffer, makecol(0,0,0));
+        if(key[KEY_UP]){
+                p1.y--;
+                p2.y--;
+                p3.y--;
+                p4.y--;
+            }
+            if(key[KEY_DOWN]){
+                p1.y++;
+                p2.y++;
+                p3.y++;
+                p4.y++;
+            }
+            if(key[KEY_RIGHT]){
+                p1.x++;
+                p2.x++;
+                p3.x++;
+                p4.x++;
+            }
+            if(key[KEY_LEFT]){
+                p1.x--;
+                p2.x--;
+                p3.x--;
+                p4.x--;
+            }
+        v.setVertices(p1, p2, p3, p4);
         line.draw(buffer, WHITE);
         v.clippingRectangle(buffer);
         if(key[KEY_ENTER])
             v.cutLine(buffer, line);
         blit(buffer, screen, 0,0,0,0, SCREEN_W, SCREEN_H);
-        Sleep(3*1000);
         speed--;
-        if(KEY_ESC)
+        if(key[KEY_ESC])
             break;
+        }
 }
 }
-}
+
 
 void Engine::mainLoop(Engine *engine, BITMAP *buffer){
 
