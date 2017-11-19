@@ -5,6 +5,10 @@
 #include "helper/Color.h"
 #include <math.h>
 
+#define M_PI		3.14159265358979323846
+#define M_PI_2		1.57079632679489661923
+#define M_PI_4		0.78539816339744830962
+
 Circle::Circle()
 {
     //ctor
@@ -12,7 +16,7 @@ Circle::Circle()
 
 Circle::Circle(Point2D point2D)
 {
-    //ctor
+    this->center = point2D;
 }
 
 Circle::~Circle()
