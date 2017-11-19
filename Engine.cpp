@@ -464,3 +464,8 @@ void Engine::mainLoop(Engine *engine, BITMAP *buffer){
         }
     }
 }
+
+void Engine::cleanUp(BITMAP *buffer){
+destroy_bitmap(buffer);
+allegro_exit();
+}

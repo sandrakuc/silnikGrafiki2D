@@ -23,8 +23,7 @@ Engine *engine = Engine::getInstance();
 buffer = engine->initiall(mode, buffer);
 //engine->tomekTest(buffer);
 engine->sandraTest(buffer);
-destroy_bitmap(buffer);
-allegro_exit();
+engine->cleanUp(buffer);
 return 0;
 }
 END_OF_MAIN()

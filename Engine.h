@@ -26,6 +26,7 @@ class Engine
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, DefinedColor color);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, int r, int g, int b);
         void drawGroupOfPoints(vector<Point2D> points, BITMAP *buffer, double r, double g, double b);
+        void cleanUp(BITMAP *buffer);
     protected:
 
     private:

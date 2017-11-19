@@ -3,7 +3,7 @@
 
 #include <allegro.h>
 #include "Point2D.h"
-#include "../helper/Color.h"
+#include "helper/Color.h"
 
 
 class BoundingBox

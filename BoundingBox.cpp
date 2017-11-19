@@ -1,6 +1,6 @@
 #include "BoundingBox.h"
 
-#include "LineSegment.h"
+#include "shape/LineSegment.h"
 
 
 BoundingBox::BoundingBox()
