@@ -132,3 +132,9 @@ void Viewport::cutLine(BITMAP *buffer, LineSegment line){
 
         }
     }
+
+    void Viewport::cutGroupOfLines(BITMAP *buffer, vector<LineSegment> lines){
+        for(int i=0; i<lines.size(); i++){
+            cutLine(buffer, lines[i]);
+        }
+    }
