@@ -10,6 +10,7 @@
 #include "Viewport.h"
 #include "shape/Circle.h"
 #include "shape/Triangle.h"
+#include "shape/Pixel.h"
 #include "helper/Color.h"
 
 
@@ -203,14 +204,6 @@ BITMAP *Engine::initiall(int mode, BITMAP *buffer){
 
 void Engine::tomekTest(BITMAP *buffer) {
 
-    Point2D point;
-    point.setXY(10,10);
-
-    vector <Point2D> points;
-    points.push_back(point);
-
-    drawGroupOfPoints(points, buffer, ORANGE);
-
     Point2D pointOfCenter(100,100);
     Circle circle = Circle();
     circle.center = pointOfCenter;
@@ -247,6 +240,15 @@ void Engine::tomekTest(BITMAP *buffer) {
     triangle.draw(buffer, ORANGE);
     triangle.moveShape(-10,-10);
     triangle.draw(buffer, RED);
+
+    Pixel pixel = Pixel();
+    Point2D p1 = Point2D(5,5);
+    pixel.point = p1;
+    pixel.draw(buffer, ORANGE);
+
+    pixel.moveShape(4,4);
+    pixel.draw(buffer, RED);
+
 
 
     blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
