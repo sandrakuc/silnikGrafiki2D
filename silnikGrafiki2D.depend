@@ -15,7 +15,7 @@
 	"helper/Color.h"
 	"Filler.h"
 
-1511098620 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1511104925 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	<iostream>
 	<winalleg.h>
@@ -26,6 +26,8 @@
 	"shape/LineSegment.h"
 	"Viewport.h"
 	"shape/Circle.h"
+	"shape/Triangle.h"
+	"shape/Pixel.h"
 	"helper/Color.h"
 
 1511091565 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\point2d.h
@@ -47,16 +49,17 @@
 	"Point2D.h"
 	"helper/Color.h"
 
-1511099793 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
+1511104925 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.cpp
 	<vector>
 	<allegro.h>
 	"Viewport.h"
 	"Point2D.h"
 	"shape/LineSegment.h"
 
-1511095580 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
+1511105139 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\viewport.h
 	"Point2D.h"
 	"shape/LineSegment.h"
+	<vector>
 
 1511086833 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\circle.cpp
 	"Circle.h"
@@ -70,7 +73,7 @@
 	"Point2D.h"
 	"helper/Color.h"
 
-1511084398 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\helper\color.h
+1511104925 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\helper\color.h
 
 1511085723 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\filler.h
 	"Point2D.h"
@@ -116,14 +119,14 @@
 	"../Point2D.h"
 	"Shape.h"
 
-1511095580 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.h
+1511104925 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.h
 	<vector>
 	<allegro.h>
 	"../Point2D.h"
 	"Shape.h"
 	"../helper/Color.h"
 
-1511097524 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.cpp
+1511104925 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\linesegment.cpp
 	<iostream>
 	"LineSegment.h"
 	"../Point2D.h"
@@ -140,4 +143,20 @@
 	"../Point2D.h"
 	"../helper/Color.h"
 	<math.h>
+
+1511104925 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\triangle.h
+	"../helper/Color.h"
+	"Shape.h"
+
+1511104925 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\pixel.h
+	<allegro.h>
+	"../helper/Color.h"
+	"Shape.h"
+
+1511104925 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\pixel.cpp
+	"Pixel.h"
+
+1511104925 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\triangle.cpp
+	"Triangle.h"
+	"LineSegment.h"
 
