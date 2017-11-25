@@ -259,7 +259,7 @@ void Engine::tomekTest(BITMAP *buffer) {
 
 
     blit( buffer, screen, 0, 0, 0, 0, SCREEN_W, SCREEN_H );
-    Sleep(3*1000);
+    Sleep(7*1000);
 }
 
 void Engine::sandraTest(BITMAP *buffer){

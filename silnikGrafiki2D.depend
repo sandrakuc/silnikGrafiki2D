@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1511108469 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
+1511166630 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\main.cpp
 	<iostream>
 	<allegro.h>
 	<vector>
@@ -15,7 +15,7 @@
 	"helper/Color.h"
 	"Filler.h"
 
-1511108682 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
+1511163611 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\engine.cpp
 	<allegro.h>
 	<iostream>
 	<winalleg.h>
@@ -161,4 +161,10 @@
 1511108498 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\shape\triangle.cpp
 	"Triangle.h"
 	"LineSegment.h"
+
+1511624906 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.cpp
+	"BitmapHandler.h"
+
+1511626895 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.h
+	<allegro.h>
 

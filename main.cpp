@@ -21,8 +21,8 @@ cout << "5 - windowed, resolution: 800x600" <<endl;
 cin >> mode;
 Engine *engine = Engine::getInstance();
 buffer = engine->initiall(mode, buffer);
-//engine->tomekTest(buffer);
-engine->sandraTest(buffer);
+engine->tomekTest(buffer);
+//engine->sandraTest(buffer);
 engine->cleanUp(buffer);
 return 0;
 }

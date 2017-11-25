@@ -32,17 +32,35 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="BoundingBox.cpp" />
+		<Unit filename="BoundingBox.h" />
 		<Unit filename="Engine.cpp" />
 		<Unit filename="Engine.h" />
-		<Unit filename="LineSegment.cpp" />
-		<Unit filename="LineSegment.h" />
+		<Unit filename="Filler.cpp" />
+		<Unit filename="Filler.h" />
+		<Unit filename="Mouse.cpp" />
+		<Unit filename="Mouse.h" />
 		<Unit filename="Point2D.cpp" />
 		<Unit filename="Point2D.h" />
 		<Unit filename="Viewport.cpp" />
 		<Unit filename="Viewport.h" />
+		<Unit filename="helper/Color.cpp" />
+		<Unit filename="helper/Color.h" />
 		<Unit filename="main.cpp">
 			<Option weight="100" />
 		</Unit>
+		<Unit filename="shape/Circle.cpp" />
+		<Unit filename="shape/Circle.h" />
+		<Unit filename="shape/LineSegment.cpp" />
+		<Unit filename="shape/LineSegment.h" />
+		<Unit filename="shape/Pixel.cpp" />
+		<Unit filename="shape/Pixel.h" />
+		<Unit filename="shape/Shape.cpp" />
+		<Unit filename="shape/Shape.h" />
+		<Unit filename="shape/ShapeObject.cpp" />
+		<Unit filename="shape/ShapeObject.h" />
+		<Unit filename="shape/Triangle.cpp" />
+		<Unit filename="shape/Triangle.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
