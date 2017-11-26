@@ -169,12 +169,14 @@
 1511708819 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.h
 	<allegro.h>
 
-1511708725 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\spriteobject.cpp
+1511713436 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\spriteobject.cpp
 	"SpriteObject.h"
 	"BitmapHandler.h"
+	<vector>
 	<allegro.h>
 
-1511708871 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\spriteobject.h
+1511713652 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\spriteobject.h
 	<allegro.h>
+	<vector>
 	"BitmapHandler.h"
 
