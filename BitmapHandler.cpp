@@ -1,6 +1,10 @@
 #include "BitmapHandler.h"
 #include <allegro.h>
 
+BitmapHandler::BitmapHandler(){
+
+}
+
 BitmapHandler::BitmapHandler(BITMAP *bmp, int x, int y)
 {
     this->bmp = bmp;

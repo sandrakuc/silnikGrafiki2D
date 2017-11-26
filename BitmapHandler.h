@@ -7,6 +7,7 @@ class BitmapHandler
 {
     public:
         int x, y;
+        BitmapHandler();
         BitmapHandler(BITMAP *bmp, int x, int y);
         virtual ~BitmapHandler();
         BITMAP *bmp;

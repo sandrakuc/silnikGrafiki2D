@@ -162,9 +162,19 @@
 	"Triangle.h"
 	"LineSegment.h"
 
-1511624906 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.cpp
+1511708819 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.cpp
 	"BitmapHandler.h"
-
-1511626895 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.h
 	<allegro.h>
+
+1511708819 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\bitmaphandler.h
+	<allegro.h>
+
+1511708725 source:c:\sandra\studia\programowanie\programy\silnikgrafiki2d\spriteobject.cpp
+	"SpriteObject.h"
+	"BitmapHandler.h"
+	<allegro.h>
+
+1511708871 c:\sandra\studia\programowanie\programy\silnikgrafiki2d\spriteobject.h
+	<allegro.h>
+	"BitmapHandler.h"
 
